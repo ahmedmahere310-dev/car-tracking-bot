@@ -1,0 +1,20 @@
+{
+  "name": "car-tracking-bot",
+  "version": "0.1.0",
+  "description": "نظام التحكم المركزي في حركة السيارات والمعدات عبر بوت تليجرام",
+  "main": "src/bot.js",
+  "type": "commonjs",
+  "scripts": {
+    "init-db": "node src/initDb.js",
+    "start": "node src/start.js",
+    "dev": "node src/bot.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0",
+    "xlsx": "^0.18.5"
+  }
+}

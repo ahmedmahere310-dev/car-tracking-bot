@@ -1,0 +1,11 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "npm start"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+# مهم جدًا: لازم تضيف Volume من لوحة تحكم Railway وتربطه بالمسار ده
+# (Settings -> Volumes -> Add Volume -> Mount path: /app/db)
+# عشان ملف قاعدة البيانات (SQLite) ميتمسحش مع كل Deploy جديد.
