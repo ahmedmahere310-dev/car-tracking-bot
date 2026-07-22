@@ -1,5 +1,9 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
+const XLSX = require('xlsx');
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
 const db = require('./db');
 const workflow = require('./workflow');
 
@@ -11,28 +15,55 @@ if (!token) {
 
 const bot = new TelegramBot(token, { polling: true });
 
-// حماية عامة: لو حصل أي خطأ غير متوقع في أي حتة، سجّله بس ومتوقفش البوت
 bot.on('polling_error', (err) => console.error('⚠️ Polling error:', err.message));
 process.on('unhandledRejection', (err) => console.error('⚠️ Unhandled rejection:', err));
 process.on('uncaughtException', (err) => console.error('⚠️ Uncaught exception:', err));
 
-// حالة المحادثة المؤقتة لكل مستخدم وهو بيدخل بيانات طلب جديد (in-memory - يكفي للتجربة)
-// في الإنتاج الأفضل ينقل لجدول DB لو هيبقى فيه أكتر من instance للبوت
 const pendingRequests = new Map();
 
 // دلوقتي شغالين بس على فرعين للتجربة - لازم تتطابق مع ACTIVE_BRANCHES في seedApprovers.js
-const ACTIVE_BRANCHES = ['C', 'NS']; // C = القاهرة الكبرى, NS = شمال الصعيد // telegram_id -> { step, assetCode, toBranch, reason }
+const ACTIVE_BRANCHES = ['C', 'NS']; // C = القاهرة الكبرى, NS = شمال الصعيد
 
-// ============ /start ============
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id,
     '👋 أهلاً بيك في نظام تتبع حركة السيارات والمعدات.\n\n' +
     'الأوامر المتاحة:\n' +
     '/newrequest — طلب نقل عربية أو معدة جديد\n' +
-    '/status <رقم الطلب> — متابعة حالة أي طلب، مثال: /status 1');
+    '/status <رقم الطلب> — متابعة حالة أي طلب، مثال: /status 1\n' +
+    '/export — تحميل ملف إكسل فيه كل بيانات المعدات المحدّثة دلوقتي');
 });
 
-// ============ /newrequest ============
+bot.onText(/\/export/, (msg) => {
+  const chatId = msg.chat.id;
+  try {
+    const rows = db.prepare(`
+      SELECT current_code AS "الكود الحالي", full_name AS "اسم المعدة", brand AS "الماركة",
+             plate_number AS "رقم اللوحة", chassis_number AS "رقم الشاسيه", engine_number AS "رقم المحرك",
+             driver_name AS "اسم السائق", current_branch AS "الفرع الحالي", status AS "الحالة",
+             updated_at AS "آخر تحديث"
+      FROM assets ORDER BY current_branch, current_code
+    `).all();
+
+    const ws = XLSX.utils.json_to_sheet(rows);
+    ws['!cols'] = Object.keys(rows[0] || {}).map(() => ({ wch: 18 }));
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'الأصول الحالية');
+
+    const filePath = path.join(os.tmpdir(), `تصدير_الأصول_${Date.now()}.xlsx`);
+    XLSX.writeFile(wb, filePath);
+
+    bot.sendDocument(chatId, filePath, {}, { filename: 'تصدير_الأصول_المحدّثة.xlsx' })
+      .then(() => fs.unlink(filePath, () => {}))
+      .catch((err) => {
+        console.error('⚠️ فشل إرسال ملف التصدير:', err.message);
+        bot.sendMessage(chatId, '❌ حصل خطأ أثناء إرسال الملف، جرب تاني.');
+      });
+  } catch (err) {
+    console.error('⚠️ خطأ أثناء التصدير:', err.message);
+    bot.sendMessage(chatId, '❌ حصل خطأ أثناء تجهيز ملف التصدير.');
+  }
+});
+
 bot.onText(/\/newrequest/, (msg) => {
   const chatId = msg.chat.id;
   pendingRequests.set(String(msg.from.id), { step: 'asset_code', chatId });
@@ -101,7 +132,6 @@ bot.on('message', (msg) => {
   }
 });
 
-// ============ إشعار الموافق الحالي بأزرار موافقة/رفض ============
 function notifyApprover(request) {
   const approver = workflow.getApproverForStage(request, request.current_stage);
   if (!approver) {
@@ -128,7 +158,6 @@ function notifyApprover(request) {
   });
 }
 
-// ============ استقبال ضغطات الأزرار ============
 bot.on('callback_query', async (query) => {
   try {
     const [action, requestIdStr] = query.data.split(':');
@@ -143,7 +172,6 @@ bot.on('callback_query', async (query) => {
       return bot.answerCallbackQuery(query.id, { text: 'الطلب ده مقفول بالفعل.' });
     }
 
-    // تحقق أمني: هل الشخص اللي ضغط هو فعلاً الموافق المسجّل لهذه المرحلة (أو البديل الاحتياطي)؟
     const expectedApprover = workflow.getApproverForStage(request, request.current_stage);
     const isAuthorized = expectedApprover && (
       expectedApprover.telegram_id === approverTelegramId ||
@@ -154,7 +182,6 @@ bot.on('callback_query', async (query) => {
     }
 
     if (action === 'reject') {
-      // نطلب سبب الرفض قبل التنفيذ
       pendingRequests.set(approverTelegramId, {
         step: 'rejection_reason',
         chatId: query.message.chat.id,
@@ -164,7 +191,6 @@ bot.on('callback_query', async (query) => {
       return bot.sendMessage(query.message.chat.id, 'اكتب سبب الرفض:');
     }
 
-    // action === 'approve'
     const outcome = workflow.recordDecision(requestId, { approverTelegramId, decision: 'approved' });
     await bot.answerCallbackQuery(query.id, { text: '✅ تم تسجيل الموافقة' });
     await bot.editMessageReplyMarkup({ inline_keyboard: [] }, {
@@ -178,18 +204,21 @@ bot.on('callback_query', async (query) => {
       bot.sendMessage(query.message.chat.id,
         `🎉 اكتمل الطلب #${requestId}. الكود الجديد للعربية: ${outcome.newCode}\n` +
         `(هيتبعت QR رسمي لحارس البوابة - خطوة قادمة).`);
+
+      if (outcome.request.requested_by_telegram_id !== approverTelegramId) {
+        bot.sendMessage(outcome.request.requested_by_telegram_id,
+          `✅ طلبك رقم #${requestId} اتوافق عليه بالكامل!\n` +
+          `الكود الجديد للعربية بقى: ${outcome.newCode}`);
+      }
     }
   } catch (err) {
-    // مهم جدًا: أي خطأ هنا (زي "query is too old" لما البوت يكون واخد فاصل)
-    // يتسجل بس، ومش يوقف البوت كله.
     console.error('⚠️ خطأ أثناء معالجة ضغطة زرار:', err.message);
     try {
       await bot.answerCallbackQuery(query.id, { text: 'حصل خطأ، جرب تاني.' });
-    } catch (_) { /* تجاهل لو حتى الرد على الزرار فشل */ }
+    } catch (_) { /* تجاهل */ }
   }
 });
 
-// استكمال سبب الرفض كرسالة نصية عادية
 bot.on('message', (msg) => {
   if (!msg.text || msg.text.startsWith('/')) return;
   const userId = String(msg.from.id);
@@ -202,14 +231,16 @@ bot.on('message', (msg) => {
   pendingRequests.delete(userId);
   bot.sendMessage(state.chatId, `🚫 اتسجل الرفض. الطلب #${state.requestId} اتقفل وهيتبعت السبب لصاحب الطلب.`);
 
-  // إشعار صاحب الطلب الأصلي
   bot.sendMessage(outcome.request.requested_by_telegram_id,
     `❌ طلبك رقم #${outcome.request.request_id} اتُرفض.\nالسبب: ${outcome.request.rejection_reason}`);
 });
 
-// ============ /status ============
-bot.onText(/\/status (.+)/, (msg, match) => {
-  const requestId = Number(match[1]);
+bot.onText(/\/status(.*)/, (msg, match) => {
+  const digits = match[1].replace(/\D/g, '');
+  if (!digits) {
+    return bot.sendMessage(msg.chat.id, 'اكتب رقم الطلب بعد الأمر، مثال: /status 4');
+  }
+  const requestId = Number(digits);
   const request = workflow.getRequestById(requestId);
   if (!request) return bot.sendMessage(msg.chat.id, 'الطلب مش موجود.');
 
