@@ -6,6 +6,12 @@ const db = require('./db');
 const schemaPath = path.join(__dirname, '..', 'db', 'schema.sql');
 const schema = fs.readFileSync(schemaPath, 'utf8');
 
-db.exec(schema);
-
-console.log('✅ تم إنشاء/تحديث الجداول بنجاح في:', process.env.DB_PATH || './db/data.sqlite');
+db.exec(schema)
+  .then(() => {
+    console.log('✅ تم إنشاء/تحديث الجداول بنجاح');
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error('❌ فشل إنشاء الجداول:', err);
+    process.exit(1);
+  });

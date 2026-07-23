@@ -76,6 +76,7 @@
   }
   .panel h2 .tag{ font-size:11px; color: var(--muted); font-weight:500; }
 
+  /* شريط أحمال الفروع - العنصر المميز */
   .branch-list{ display:flex; flex-direction:column; gap:10px; }
   .branch-row{ display:grid; grid-template-columns: 90px 1fr 46px; align-items:center; gap:10px; }
   .branch-code{
@@ -178,6 +179,7 @@ async function loadDashboard(){
     fetch('/api/recent-transfers').then(r=>r.json()),
   ]);
 
+  // KPIs
   document.getElementById('kpiTotal').textContent = overview.totalAssets;
   document.getElementById('kpiTransfers').textContent = overview.totalTransfers;
   const available = (overview.byStatus.find(s=>s.status==='available')||{c:0}).c;
@@ -186,6 +188,7 @@ async function loadDashboard(){
   document.getElementById('pendingBadge').textContent = overview.pendingRequests > 0
     ? `⏳ ${overview.pendingRequests} طلب محتاج موافقة دلوقتي` : '✅ مفيش طلبات معلّقة';
 
+  // Branch load bars
   const maxCount = Math.max(1, ...branchStats.map(b=>b.asset_count));
   const branchList = document.getElementById('branchList');
   branchList.innerHTML = branchStats.filter(b=>b.asset_count>0).map(b => `
@@ -196,6 +199,7 @@ async function loadDashboard(){
     </div>
   `).join('') || '<div class="empty">مفيش بيانات فروع لسه</div>';
 
+  // Status doughnut chart
   const statusLabels = { pending: 'قيد المراجعة', approved: 'موافَق عليها', rejected: 'مرفوضة', cancelled: 'ملغاة' };
   const statusColors = { pending: '#F0B429', approved: '#3DD9A5', rejected: '#F0574F', cancelled: '#7C8AA8' };
   const sData = overview.requestsByStatus;
@@ -213,6 +217,7 @@ async function loadDashboard(){
     }
   });
 
+  // Timeline line chart
   const ctx2 = document.getElementById('transfersChart');
   if(transfersChart) transfersChart.destroy();
   transfersChart = new Chart(ctx2, {
@@ -237,6 +242,7 @@ async function loadDashboard(){
     }
   });
 
+  // Recent transfers table
   const tbody = document.getElementById('recentBody');
   tbody.innerHTML = recent.length ? recent.map(r => `
     <tr>
@@ -254,7 +260,7 @@ async function loadDashboard(){
 }
 
 loadDashboard();
-setInterval(loadDashboard, 15000);
+setInterval(loadDashboard, 15000); // تحديث كل 15 ثانية
 </script>
 
 </body>

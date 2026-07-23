@@ -33,16 +33,16 @@ bot.onText(/\/start/, (msg) => {
     '/export — تحميل ملف إكسل فيه كل بيانات المعدات المحدّثة دلوقتي');
 });
 
-bot.onText(/\/export/, (msg) => {
+bot.onText(/\/export/, async (msg) => {
   const chatId = msg.chat.id;
   try {
-    const rows = db.prepare(`
+    const rows = await db.all(`
       SELECT current_code AS "الكود الحالي", full_name AS "اسم المعدة", brand AS "الماركة",
              plate_number AS "رقم اللوحة", chassis_number AS "رقم الشاسيه", engine_number AS "رقم المحرك",
              driver_name AS "اسم السائق", current_branch AS "الفرع الحالي", status AS "الحالة",
              updated_at AS "آخر تحديث"
       FROM assets ORDER BY current_branch, current_code
-    `).all();
+    `);
 
     const ws = XLSX.utils.json_to_sheet(rows);
     ws['!cols'] = Object.keys(rows[0] || {}).map(() => ({ wch: 18 }));
@@ -52,15 +52,11 @@ bot.onText(/\/export/, (msg) => {
     const filePath = path.join(os.tmpdir(), `تصدير_الأصول_${Date.now()}.xlsx`);
     XLSX.writeFile(wb, filePath);
 
-    bot.sendDocument(chatId, filePath, {}, { filename: 'تصدير_الأصول_المحدّثة.xlsx' })
-      .then(() => fs.unlink(filePath, () => {}))
-      .catch((err) => {
-        console.error('⚠️ فشل إرسال ملف التصدير:', err.message);
-        bot.sendMessage(chatId, '❌ حصل خطأ أثناء إرسال الملف، جرب تاني.');
-      });
+    await bot.sendDocument(chatId, filePath, {}, { filename: 'تصدير_الأصول_المحدّثة.xlsx' });
+    fs.unlink(filePath, () => {});
   } catch (err) {
     console.error('⚠️ خطأ أثناء التصدير:', err.message);
-    bot.sendMessage(chatId, '❌ حصل خطأ أثناء تجهيز ملف التصدير.');
+    bot.sendMessage(chatId, '❌ حصل خطأ أثناء تجهيز أو إرسال ملف التصدير.');
   }
 });
 
@@ -70,7 +66,7 @@ bot.onText(/\/newrequest/, (msg) => {
   bot.sendMessage(chatId, '🚗 ابعتلي كود العربية أو المعدة المطلوب نقلها (مثال: C-005)');
 });
 
-bot.on('message', (msg) => {
+bot.on('message', async (msg) => {
   if (!msg.text || msg.text.startsWith('/')) return;
   const userId = String(msg.from.id);
   const state = pendingRequests.get(userId);
@@ -78,67 +74,83 @@ bot.on('message', (msg) => {
 
   const chatId = msg.chat.id;
 
-  if (state.step === 'asset_code') {
-    const asset = db.prepare(`SELECT * FROM assets WHERE current_code = ?`).get(msg.text.trim());
-    if (!asset) {
-      bot.sendMessage(chatId, '❌ الكود ده مش موجود في النظام. جرب تاني أو ابعت /newrequest تاني.');
+  try {
+    if (state.step === 'asset_code') {
+      const asset = await db.get(`SELECT * FROM assets WHERE current_code = ?`, [msg.text.trim()]);
+      if (!asset) {
+        bot.sendMessage(chatId, '❌ الكود ده مش موجود في النظام. جرب تاني أو ابعت /newrequest تاني.');
+        return;
+      }
+      if (asset.status !== 'available') {
+        bot.sendMessage(chatId, `⚠️ العربية دي حالتها حاليًا "${asset.status}" ومش متاحة للنقل دلوقتي.`);
+        pendingRequests.delete(userId);
+        return;
+      }
+      if (!ACTIVE_BRANCHES.includes(asset.current_branch)) {
+        bot.sendMessage(chatId, `⚠️ فرع العربية دي (${asset.current_branch}) لسه مش مفعّل في النظام حاليًا. الفروع الشغالة دلوقتي: ${ACTIVE_BRANCHES.join('، ')}.`);
+        pendingRequests.delete(userId);
+        return;
+      }
+      state.asset = asset;
+      state.step = 'to_branch';
+      bot.sendMessage(chatId, `تمام، ${asset.full_name} (${asset.current_code}).\nابعتلي كود الفرع المستقبِل (مثال: BHT):`);
       return;
     }
-    if (asset.status !== 'available') {
-      bot.sendMessage(chatId, `⚠️ العربية دي حالتها حاليًا "${asset.status}" ومش متاحة للنقل دلوقتي.`);
-      pendingRequests.delete(userId);
-      return;
-    }
-    if (!ACTIVE_BRANCHES.includes(asset.current_branch)) {
-      bot.sendMessage(chatId, `⚠️ فرع العربية دي (${asset.current_branch}) لسه مش مفعّل في النظام حاليًا. الفروع الشغالة دلوقتي: ${ACTIVE_BRANCHES.join('، ')}.`);
-      pendingRequests.delete(userId);
-      return;
-    }
-    state.asset = asset;
-    state.step = 'to_branch';
-    bot.sendMessage(chatId, `تمام، ${asset.full_name} (${asset.current_code}).\nابعتلي كود الفرع المستقبِل (مثال: BHT):`);
-    return;
-  }
 
-  if (state.step === 'to_branch') {
-    const branch = db.prepare(`SELECT * FROM branches WHERE branch_code = ?`).get(msg.text.trim());
-    if (!branch) {
-      bot.sendMessage(chatId, '❌ كود الفرع ده مش معروف. جرب تاني.');
+    if (state.step === 'to_branch') {
+      const branch = await db.get(`SELECT * FROM branches WHERE branch_code = ?`, [msg.text.trim()]);
+      if (!branch) {
+        bot.sendMessage(chatId, '❌ كود الفرع ده مش معروف. جرب تاني.');
+        return;
+      }
+      if (!ACTIVE_BRANCHES.includes(branch.branch_code)) {
+        bot.sendMessage(chatId, `⚠️ الفرع ده لسه مش مفعّل في النظام. الفروع الشغالة دلوقتي: ${ACTIVE_BRANCHES.join('، ')}.`);
+        return;
+      }
+      state.toBranch = branch.branch_code;
+      state.step = 'reason';
+      bot.sendMessage(chatId, 'اكتب سبب النقل باختصار:');
       return;
     }
-    if (!ACTIVE_BRANCHES.includes(branch.branch_code)) {
-      bot.sendMessage(chatId, `⚠️ الفرع ده لسه مش مفعّل في النظام. الفروع الشغالة دلوقتي: ${ACTIVE_BRANCHES.join('، ')}.`);
-      return;
-    }
-    state.toBranch = branch.branch_code;
-    state.step = 'reason';
-    bot.sendMessage(chatId, 'اكتب سبب النقل باختصار:');
-    return;
-  }
 
-  if (state.step === 'reason') {
-    state.reason = msg.text.trim();
-    const request = workflow.createTransferRequest({
-      assetId: state.asset.asset_id,
-      fromBranch: state.asset.current_branch,
-      toBranch: state.toBranch,
-      reason: state.reason,
-      requestedByTelegramId: userId,
-    });
-    pendingRequests.delete(userId);
-    bot.sendMessage(chatId, `✅ اتسجل الطلب رقم #${request.request_id}. هيتبعت دلوقتي للإدارة العليا للموافقة.`);
-    notifyApprover(request);
-    return;
+    if (state.step === 'reason') {
+      state.reason = msg.text.trim();
+      const request = await workflow.createTransferRequest({
+        assetId: state.asset.asset_id,
+        fromBranch: state.asset.current_branch,
+        toBranch: state.toBranch,
+        reason: state.reason,
+        requestedByTelegramId: userId,
+      });
+      pendingRequests.delete(userId);
+      bot.sendMessage(chatId, `✅ اتسجل الطلب رقم #${request.request_id}. هيتبعت دلوقتي للإدارة العليا للموافقة.`);
+      await notifyApprover(request);
+      return;
+    }
+
+    if (state.step === 'rejection_reason') {
+      const outcome = await workflow.recordDecision(state.requestId, {
+        approverTelegramId: userId, decision: 'rejected', reason: msg.text.trim(),
+      });
+      pendingRequests.delete(userId);
+      bot.sendMessage(state.chatId, `🚫 اتسجل الرفض. الطلب #${state.requestId} اتقفل وهيتبعت السبب لصاحب الطلب.`);
+      bot.sendMessage(outcome.request.requested_by_telegram_id,
+        `❌ طلبك رقم #${outcome.request.request_id} اتُرفض.\nالسبب: ${outcome.request.rejection_reason}`);
+      return;
+    }
+  } catch (err) {
+    console.error('⚠️ خطأ أثناء معالجة رسالة:', err.message);
+    bot.sendMessage(chatId, '❌ حصل خطأ غير متوقع، جرب تاني.');
   }
 });
 
-function notifyApprover(request) {
-  const approver = workflow.getApproverForStage(request, request.current_stage);
+async function notifyApprover(request) {
+  const approver = await workflow.getApproverForStage(request, request.current_stage);
   if (!approver) {
     console.error(`⚠️ مفيش موافق مسجّل لمرحلة ${request.current_stage} في الفرع ${request.from_branch}`);
     return;
   }
-  const asset = db.prepare(`SELECT * FROM assets WHERE asset_id = ?`).get(request.asset_id);
+  const asset = await db.get(`SELECT * FROM assets WHERE asset_id = ?`, [request.asset_id]);
   const stageLabel = workflow.STAGES[request.current_stage].label;
 
   const text =
@@ -163,7 +175,7 @@ bot.on('callback_query', async (query) => {
     const [action, requestIdStr] = query.data.split(':');
     const requestId = Number(requestIdStr);
     const approverTelegramId = String(query.from.id);
-    const request = workflow.getRequestById(requestId);
+    const request = await workflow.getRequestById(requestId);
 
     if (!request) {
       return bot.answerCallbackQuery(query.id, { text: 'الطلب غير موجود.' });
@@ -172,7 +184,7 @@ bot.on('callback_query', async (query) => {
       return bot.answerCallbackQuery(query.id, { text: 'الطلب ده مقفول بالفعل.' });
     }
 
-    const expectedApprover = workflow.getApproverForStage(request, request.current_stage);
+    const expectedApprover = await workflow.getApproverForStage(request, request.current_stage);
     const isAuthorized = expectedApprover && (
       expectedApprover.telegram_id === approverTelegramId ||
       expectedApprover.backup_telegram_id === approverTelegramId
@@ -191,7 +203,7 @@ bot.on('callback_query', async (query) => {
       return bot.sendMessage(query.message.chat.id, 'اكتب سبب الرفض:');
     }
 
-    const outcome = workflow.recordDecision(requestId, { approverTelegramId, decision: 'approved' });
+    const outcome = await workflow.recordDecision(requestId, { approverTelegramId, decision: 'approved' });
     await bot.answerCallbackQuery(query.id, { text: '✅ تم تسجيل الموافقة' });
     await bot.editMessageReplyMarkup({ inline_keyboard: [] }, {
       chat_id: query.message.chat.id, message_id: query.message.message_id,
@@ -199,7 +211,7 @@ bot.on('callback_query', async (query) => {
 
     if (outcome.result === 'advanced') {
       bot.sendMessage(query.message.chat.id, `تم. الطلب اتحول للمرحلة الجاية: ${workflow.STAGES[outcome.stage].label}`);
-      notifyApprover(outcome.request);
+      await notifyApprover(outcome.request);
     } else if (outcome.result === 'completed') {
       bot.sendMessage(query.message.chat.id,
         `🎉 اكتمل الطلب #${requestId}. الكود الجديد للعربية: ${outcome.newCode}\n` +
@@ -219,36 +231,25 @@ bot.on('callback_query', async (query) => {
   }
 });
 
-bot.on('message', (msg) => {
-  if (!msg.text || msg.text.startsWith('/')) return;
-  const userId = String(msg.from.id);
-  const state = pendingRequests.get(userId);
-  if (!state || state.step !== 'rejection_reason') return;
+bot.onText(/\/status(.*)/, async (msg, match) => {
+  try {
+    const digits = match[1].replace(/\D/g, '');
+    if (!digits) {
+      return bot.sendMessage(msg.chat.id, 'اكتب رقم الطلب بعد الأمر، مثال: /status 4');
+    }
+    const requestId = Number(digits);
+    const request = await workflow.getRequestById(requestId);
+    if (!request) return bot.sendMessage(msg.chat.id, 'الطلب مش موجود.');
 
-  const outcome = workflow.recordDecision(state.requestId, {
-    approverTelegramId: userId, decision: 'rejected', reason: msg.text.trim(),
-  });
-  pendingRequests.delete(userId);
-  bot.sendMessage(state.chatId, `🚫 اتسجل الرفض. الطلب #${state.requestId} اتقفل وهيتبعت السبب لصاحب الطلب.`);
-
-  bot.sendMessage(outcome.request.requested_by_telegram_id,
-    `❌ طلبك رقم #${outcome.request.request_id} اتُرفض.\nالسبب: ${outcome.request.rejection_reason}`);
-});
-
-bot.onText(/\/status(.*)/, (msg, match) => {
-  const digits = match[1].replace(/\D/g, '');
-  if (!digits) {
-    return bot.sendMessage(msg.chat.id, 'اكتب رقم الطلب بعد الأمر، مثال: /status 4');
+    const log = await db.all(`SELECT * FROM approval_log WHERE request_id = ? ORDER BY decided_at`, [requestId]);
+    let text = `📋 طلب #${requestId} - الحالة: ${request.status}\n`;
+    text += `المرحلة الحالية: ${request.status === 'pending' ? workflow.STAGES[request.current_stage].label : '-'}\n\n`;
+    text += log.map(l => `${workflow.STAGES[l.stage].label}: ${l.decision === 'approved' ? '✅ وافق' : '❌ رفض'} (${l.decided_at})`).join('\n');
+    bot.sendMessage(msg.chat.id, text || 'لسه مفيش قرارات مسجّلة.');
+  } catch (err) {
+    console.error('⚠️ خطأ في /status:', err.message);
+    bot.sendMessage(msg.chat.id, '❌ حصل خطأ، جرب تاني.');
   }
-  const requestId = Number(digits);
-  const request = workflow.getRequestById(requestId);
-  if (!request) return bot.sendMessage(msg.chat.id, 'الطلب مش موجود.');
-
-  const log = db.prepare(`SELECT * FROM approval_log WHERE request_id = ? ORDER BY decided_at`).all(requestId);
-  let text = `📋 طلب #${requestId} - الحالة: ${request.status}\n`;
-  text += `المرحلة الحالية: ${request.status === 'pending' ? workflow.STAGES[request.current_stage].label : '-'}\n\n`;
-  text += log.map(l => `${workflow.STAGES[l.stage].label}: ${l.decision === 'approved' ? '✅ وافق' : '❌ رفض'} (${l.decided_at})`).join('\n');
-  bot.sendMessage(msg.chat.id, text || 'لسه مفيش قرارات مسجّلة.');
 });
 
 console.log('🤖 البوت شغال...');
