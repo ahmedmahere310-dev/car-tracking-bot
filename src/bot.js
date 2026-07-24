@@ -33,9 +33,26 @@ bot.onText(/\/start/, (msg) => {
     '/export — تحميل ملف إكسل فيه كل بيانات المعدات المحدّثة دلوقتي');
 });
 
+/** بيتأكد إن اللي بعت الأمر مسجّل كموافِق بدور top_management (الإدارة العليا) */
+async function isAdmin(telegramId) {
+  const row = await db.get(`
+    SELECT 1 FROM approvers
+    WHERE role = 'top_management' AND is_active = 1
+      AND (telegram_id = ? OR backup_telegram_id = ?)
+    LIMIT 1
+  `, [telegramId, telegramId]);
+  return !!row;
+}
+
 bot.onText(/\/export/, async (msg) => {
   const chatId = msg.chat.id;
+  const userId = String(msg.from.id);
   try {
+    if (!(await isAdmin(userId))) {
+      bot.sendMessage(chatId, '⛔ الأمر ده متاح بس للإدارة العليا.');
+      return;
+    }
+
     const rows = await db.all(`
       SELECT current_code AS "الكود الحالي", full_name AS "اسم المعدة", brand AS "الماركة",
              plate_number AS "رقم اللوحة", chassis_number AS "رقم الشاسيه", engine_number AS "رقم المحرك",
