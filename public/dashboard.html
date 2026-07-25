@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة تحكم نظام تتبع الأسطول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0A0F1C;
+    --panel: #121A2E;
+    --line: #223050;
+    --amber: #F0B429;
+    --cyan: #38BDF8;
+    --text: #E7ECF6;
+    --muted: #7C8AA8;
+    --ok: #3DD9A5;
+    --danger: #F0574F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Tajawal', sans-serif; min-height: 100vh;
+  }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  
+  header {
+    padding: 20px 28px; border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(18,26,46,0.8), transparent);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
+  }
+  header h1 { font-family: 'Cairo', sans-serif; font-weight: 900; font-size: 24px; margin: 0; }
+  
+  .search-bar {
+    display: flex; gap: 8px; flex: 1; max-width: 500px;
+  }
+  .search-bar input {
+    flex: 1; padding: 8px 12px; border: 1px solid var(--line);
+    background: rgba(255,255,255,0.05); color: var(--text);
+    border-radius: 6px; font-family: 'Tajawal';
+  }
+  .search-bar button {
+    padding: 8px 14px; background: var(--cyan); color: var(--bg);
+    border: none; border-radius: 6px; cursor: pointer; font-weight: 600;
+  }
+
+  nav {
+    display: flex; gap: 10px; margin-top: 10px; width: 100%;
+  }
+  nav button {
+    padding: 8px 14px; background: var(--panel); border: 1px solid var(--line);
+    color: var(--text); border-radius: 6px; cursor: pointer; font-family: 'Tajawal';
+    transition: 0.2s;
+  }
+  nav button.active { background: var(--cyan); color: var(--bg); border-color: var(--cyan); }
+  nav button:hover { border-color: var(--cyan); }
+
+  main { padding: 20px 28px; max-width: 1400px; margin: 0 auto; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .kpi {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    padding: 16px; text-align: center;
+  }
+  .kpi .label { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+  .kpi .value { font-size: 28px; font-weight: 700; }
+  .kpi.amber .value { color: var(--amber); }
+  .kpi.cyan .value { color: var(--cyan); }
+  .kpi.ok .value { color: var(--ok); }
+  .kpi.danger .value { color: var(--danger); }
+
+  .section { margin-bottom: 20px; }
+  .section h2 { font-family: 'Cairo', sans-serif; font-size: 16px; margin: 0 0 12px; }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+  }
+  th { text-align: right; color: var(--muted); font-weight: 500; padding: 10px; border-bottom: 1px solid var(--line); }
+  td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  
+  .request-card {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 8px;
+    padding: 14px; margin-bottom: 10px; display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center;
+  }
+  .request-card.pending { border-right: 3px solid var(--amber); }
+  .request-card.approved { border-right: 3px solid var(--ok); }
+  .request-card.rejected { border-right: 3px solid var(--danger); }
+
+  .request-info { font-size: 13px; }
+  .request-info strong { color: var(--text); }
+  .request-info .sub { color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+  .request-actions { display: flex; gap: 8px; }
+  .request-actions button {
+    padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer;
+    font-size: 12px; font-weight: 600; transition: 0.2s;
+  }
+  .approve-btn { background: var(--ok); color: var(--bg); }
+  .approve-btn:hover { opacity: 0.8; }
+  .reject-btn { background: var(--danger); color: white; }
+  .reject-btn:hover { opacity: 0.8; }
+
+  .chart-wrap { height: 250px; margin-bottom: 20px; }
+
+  .empty { color: var(--muted); text-align: center; padding: 30px; }
+
+  .modal {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000;
+  }
+  .modal.show { display: flex; }
+  .modal-content {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    padding: 20px; max-width: 400px; width: 90%;
+  }
+  .modal-content h3 { margin-top: 0; }
+  .modal-content input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid var(--line); border-radius: 4px; background: rgba(255,255,255,0.05); color: var(--text); font-family: 'Tajawal'; }
+  .modal-content button { width: 48%; padding: 10px; margin: 5px 1%; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
+  .modal-btn-confirm { background: var(--ok); color: var(--bg); }
+  .modal-btn-cancel { background: var(--muted); color: var(--bg); }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>🚦 لوحة التحكم الموحدة</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="ابحث عن عربية أو طلب...">
+    <button onclick="performSearch()">بحث</button>
+  </div>
+</header>
+
+<nav style="padding: 0 28px; padding-top: 10px;">
+  <button class="tab-btn active" data-tab="overview">نظرة عامة</button>
+  <button class="tab-btn" data-tab="pending">طلبات معلّقة</button>
+  <button class="tab-btn" data-tab="recent">آخر النقلات</button>
+  <button class="tab-btn" data-tab="stats">إحصائيات متقدمة</button>
+</nav>
+
+<main>
+
+  <div id="overview" class="tab-content">
+    <div class="kpi-row">
+      <div class="kpi amber">
+        <div class="label">إجمالي المعدات</div>
+        <div class="value mono" id="kpiTotal">--</div>
+      </div>
+      <div class="kpi cyan">
+        <div class="label">إجمالي النقلات</div>
+        <div class="value mono" id="kpiTransfers">--</div>
+      </div>
+      <div class="kpi ok">
+        <div class="label">متاحة الآن</div>
+        <div class="value mono" id="kpiAvailable">--</div>
+      </div>
+      <div class="kpi danger">
+        <div class="label">طلبات معلّقة</div>
+        <div class="value mono" id="kpiPending">--</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>توزيع الفروع</h2>
+      <div class="panel">
+        <div class="chart-wrap"><canvas id="branchChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>حالة الطلبات</h2>
+      <div class="panel">
+        <div class="chart-wrap"><canvas id="statusChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>حركة النقل عبر الزمن</h2>
+      <div class="panel">
+        <div class="chart-wrap"><canvas id="timelineChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pending" class="tab-content" style="display:none;">
+    <div class="panel">
+      <div id="pendingList"></div>
+    </div>
+  </div>
+
+  <div id="recent" class="tab-content" style="display:none;">
+    <div class="section">
+      <h2>آخر عمليات النقل</h2>
+      <div class="panel">
+        <table>
+          <thead>
+            <tr>
+              <th>المعدة</th>
+              <th>الكود القديم</th>
+              <th>الكود الجديد</th>
+              <th>من</th>
+              <th>إلى</th>
+              <th>التاريخ</th>
+            </tr>
+          </thead>
+          <tbody id="recentBody">
+            <tr><td colspan="6" class="empty">جاري التحميل...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="stats" class="tab-content" style="display:none;">
+    <div class="kpi-row">
+      <div class="kpi ok">
+        <div class="label">نسبة الموافقات</div>
+        <div class="value mono" id="approvalRate">--</div>
+      </div>
+      <div class="kpi danger">
+        <div class="label">المرفوضة</div>
+        <div class="value mono" id="rejectionCount">--</div>
+      </div>
+      <div class="kpi cyan">
+        <div class="label">متوسط وقت الموافقة</div>
+        <div class="value mono" id="avgTime">--</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>أكثر الفروع نشاطًا</h2>
+      <div class="panel">
+        <table>
+          <thead><tr><th>الفرع</th><th>عدد النقلات</th></tr></thead>
+          <tbody id="topBranchesBody">
+            <tr><td colspan="2" class="empty">جاري التحميل...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Modal للموافقة/الرفض -->
+<div id="actionModal" class="modal">
+  <div class="modal-content">
+    <h3 id="modalTitle">موافقة على الطلب</h3>
+    <input type="password" id="adminPassword" placeholder="كلمة المرور الإدارية">
+    <input type="text" id="rejectReason" placeholder="سبب الرفض (اختياري)" style="display:none;">
+    <button class="modal-btn-confirm" onclick="confirmAction()">تأكيد</button>
+    <button class="modal-btn-cancel" onclick="closeModal()">إلغاء</button>
+  </div>
+</div>
+
+<script>
+let currentAction = null;
+let charts = {};
+const fmtTime = (iso) => {
+  if(!iso) return '-';
+  const d = new Date(iso.replace(' ', 'T') + 'Z');
+  return d.toLocaleString('ar-EG', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
+};
+
+async function loadOverview() {
+  const [overview, branches, timeline, recent] = await Promise.all([
+    fetch('/api/overview').then(r=>r.json()),
+    fetch('/api/branch-stats').then(r=>r.json()),
+    fetch('/api/transfers-timeline').then(r=>r.json()),
+    fetch('/api/recent-transfers').then(r=>r.json()),
+  ]);
+
+  document.getElementById('kpiTotal').textContent = overview.totalAssets;
+  document.getElementById('kpiTransfers').textContent = overview.totalTransfers;
+  const available = (overview.byStatus.find(s=>s.status==='available')||{c:0}).c;
+  document.getElementById('kpiAvailable').textContent = available;
+  document.getElementById('kpiPending').textContent = overview.pendingRequests;
+
+  // Branch Chart
+  const ctx1 = document.getElementById('branchChart');
+  if(charts.branch) charts.branch.destroy();
+  charts.branch = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+      labels: branches.map(b=>b.branch_code),
+      datasets: [{
+        label: 'عدد المعدات',
+        data: branches.map(b=>b.asset_count),
+        backgroundColor: '#38BDF8',
+        borderColor: '#0A0F1C',
+        borderWidth: 1,
+      }]
+    },
+    options: { maintainAspectRatio: false, scales: { y: { ticks: { color: '#7C8AA8' }, grid: { color: 'rgba(255,255,255,0.05)' } } } }
+  });
+
+  // Status Chart
+  const statusLabels = { pending: 'قيد المراجعة', approved: 'موافَق عليها', rejected: 'مرفوضة' };
+  const statusColors = { pending: '#F0B429', approved: '#3DD9A5', rejected: '#F0574F' };
+  const sData = overview.requestsByStatus;
+  const ctx2 = document.getElementById('statusChart');
+  if(charts.status) charts.status.destroy();
+  charts.status = new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+      labels: sData.map(s=>statusLabels[s.status]||s.status),
+      datasets: [{ data: sData.map(s=>s.c), backgroundColor: sData.map(s=>statusColors[s.status]||'#555'), borderWidth: 0 }]
+    },
+    options: { maintainAspectRatio: false }
+  });
+
+  // Timeline Chart
+  const ctx3 = document.getElementById('timelineChart');
+  if(charts.timeline) charts.timeline.destroy();
+  charts.timeline = new Chart(ctx3, {
+    type: 'line',
+    data: {
+      labels: timeline.map(t=>t.day),
+      datasets: [{
+        label: 'عدد النقلات',
+        data: timeline.map(t=>t.count),
+        borderColor: '#38BDF8',
+        backgroundColor: 'rgba(56,189,248,0.1)',
+        fill: true,
+        tension: 0.3,
+      }]
+    },
+    options: { maintainAspectRatio: false, scales: { y: { ticks: { color: '#7C8AA8' } } } }
+  });
+
+  // Recent Transfers
+  const tbody = document.getElementById('recentBody');
+  tbody.innerHTML = recent.length ? recent.map(r => `
+    <tr>
+      <td>${r.full_name || '-'}</td>
+      <td class="mono">${r.old_code}</td>
+      <td class="mono">${r.new_code}</td>
+      <td>${r.from_branch || '-'}</td>
+      <td>${r.to_branch || '-'}</td>
+      <td class="mono">${fmtTime(r.changed_at)}</td>
+    </tr>
+  `).join('') : '<tr><td colspan="6" class="empty">لسه مفيش عمليات نقل</td></tr>';
+}
+
+async function loadPending() {
+  const requests = await fetch('/api/pending-requests').then(r=>r.json());
+  const list = document.getElementById('pendingList');
+  if(requests.length === 0) {
+    list.innerHTML = '<div class="empty">لا توجد طلبات معلّقة</div>';
+    return;
+  }
+  list.innerHTML = requests.map(req => `
+    <div class="request-card pending">
+      <div class="request-info">
+        <strong>${req.full_name}</strong> (${req.current_code})
+        <div class="sub">من ${req.from_branch} إلى ${req.to_branch}</div>
+        <div class="sub">السبب: ${req.reason}</div>
+        <div class="sub">المرحلة: ${req.current_stage}/4</div>
+      </div>
+      <div class="request-actions">
+        <button class="approve-btn" onclick="openActionModal('approve', ${req.request_id})">✅ موافقة</button>
+        <button class="reject-btn" onclick="openActionModal('reject', ${req.request_id})">❌ رفض</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function loadStats() {
+  const stats = await fetch('/api/advanced-stats').then(r=>r.json());
+  const total = stats.approvalRate.total || 1;
+  document.getElementById('approvalRate').textContent = Math.round((stats.approvalRate.approved / total) * 100) + '%';
+  document.getElementById('rejectionCount').textContent = stats.approvalRate.rejected;
+  document.getElementById('avgTime').textContent = stats.avgApprovalTime.avg_days ? stats.avgApprovalTime.avg_days.toFixed(1) + ' يوم' : '-';
+
+  const tbody = document.getElementById('topBranchesBody');
+  tbody.innerHTML = stats.topBranches.length ? stats.topBranches.map(b => `
+    <tr>
+      <td>${b.from_branch}</td>
+      <td>${b.transfer_count}</td>
+    </tr>
+  `).join('') : '<tr><td colspan="2" class="empty">لا بيانات</td></tr>';
+}
+
+function openActionModal(action, requestId) {
+  currentAction = { type: action, requestId };
+  const modal = document.getElementById('actionModal');
+  document.getElementById('modalTitle').textContent = action === 'approve' ? '✅ موافقة على الطلب' : '❌ رفض الطلب';
+  document.getElementById('rejectReason').style.display = action === 'reject' ? 'block' : 'none';
+  document.getElementById('adminPassword').value = '';
+  document.getElementById('rejectReason').value = '';
+  modal.classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('actionModal').classList.remove('show');
+  currentAction = null;
+}
+
+async function confirmAction() {
+  if(!currentAction) return;
+  const password = document.getElementById('adminPassword').value;
+  const reason = document.getElementById('rejectReason').value;
+
+  const endpoint = currentAction.type === 'approve' 
+    ? `/api/request/${currentAction.requestId}/approve`
+    : `/api/request/${currentAction.requestId}/reject`;
+
+  try {
+    const result = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ adminPassword: password, reason })
+    });
+
+    if(result.ok) {
+      alert('✅ تم ' + (currentAction.type === 'approve' ? 'الموافقة' : 'الرفض') + ' بنجاح');
+      closeModal();
+      loadPending();
+      loadOverview();
+    } else {
+      const err = await result.json();
+      alert('❌ خطأ: ' + err.error);
+    }
+  } catch(e) {
+    alert('❌ خطأ الاتصال: ' + e.message);
+  }
+}
+
+// Tab Switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const tabName = this.dataset.tab;
+    
+    // Hide all tabs
+    document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+    // Show selected tab
+    document.getElementById(tabName).style.display = 'block';
+    
+    // Update active button
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    
+    // Load data for tab
+    if(tabName === 'pending') loadPending();
+    if(tabName === 'stats') loadStats();
+  });
+});
+
+// Initial Load
+loadOverview();
+setInterval(loadOverview, 15000);
+</script>
+
+</body>
+</html>
