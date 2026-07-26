@@ -1,0 +1,5250 @@
+{
+  "branches": {
+    "C": {
+      "code": "C",
+      "name": "القاهرة"
+    },
+    "NS": {
+      "code": "NS",
+      "name": "شمال الصعيد"
+    },
+    "SS": {
+      "code": "SS",
+      "name": "جنوب الصعيد"
+    },
+    "DLT": {
+      "code": "DLT",
+      "name": "الدلتا"
+    },
+    "ALX": {
+      "code": "ALX",
+      "name": "الاسكندرية"
+    },
+    "TNF": {
+      "code": "TNF",
+      "name": "التنفيذ المركزي "
+    },
+    "OPR": {
+      "code": "OPR",
+      "name": "عمليات المركز الرئيسي"
+    },
+    "ADM": {
+      "code": "ADM",
+      "name": "ادارات المركز الرئيسي"
+    },
+    "WRK": {
+      "code": "WRK",
+      "name": "الورش الانتاجية"
+    },
+    "MWQ": {
+      "code": "MWQ",
+      "name": "معدات مواقع"
+    },
+    "SHB": {
+      "code": "SHB",
+      "name": "محزن شبرا "
+    },
+    "GMR": {
+      "code": "GMR",
+      "name": "غمرة"
+    },
+    "BHT": {
+      "code": "BHT",
+      "name": "بهتيم"
+    }
+  },
+  "assets": {
+    "CAI-001": {
+      "code": "CAI-001",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا- كرولا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-002": {
+      "code": "CAI-002",
+      "name": "سيارة ملاكي ",
+      "brand": "سوبارو ",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-003": {
+      "code": "CAI-003",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-004": {
+      "code": "CAI-004",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-005": {
+      "code": "CAI-005",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-006": {
+      "code": "CAI-006",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-007": {
+      "code": "CAI-007",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-008": {
+      "code": "CAI-008",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-009": {
+      "code": "CAI-009",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-010": {
+      "code": "CAI-010",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-011": {
+      "code": "CAI-011",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-012": {
+      "code": "CAI-012",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-013": {
+      "code": "CAI-013",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-014": {
+      "code": "CAI-014",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-015": {
+      "code": "CAI-015",
+      "name": "سيارة ملاكي ",
+      "brand": "اوبل فيكترا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-016": {
+      "code": "CAI-016",
+      "name": "سيارة ملاكي ",
+      "brand": "دايو لانوس",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-017": {
+      "code": "CAI-017",
+      "name": "سيارة ملاكي ",
+      "brand": "دايو لانوس",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-018": {
+      "code": "CAI-018",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-019": {
+      "code": "CAI-019",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-020": {
+      "code": "CAI-020",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-021": {
+      "code": "CAI-021",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-022": {
+      "code": "CAI-022",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-023": {
+      "code": "CAI-023",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-024": {
+      "code": "CAI-024",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-025": {
+      "code": "CAI-025",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-026": {
+      "code": "CAI-026",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-027": {
+      "code": "CAI-027",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-028": {
+      "code": "CAI-028",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-029": {
+      "code": "CAI-029",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-030": {
+      "code": "CAI-030",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-031": {
+      "code": "CAI-031",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-032": {
+      "code": "CAI-032",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-033": {
+      "code": "CAI-033",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-034": {
+      "code": "CAI-034",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-035": {
+      "code": "CAI-035",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-036": {
+      "code": "CAI-036",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-037": {
+      "code": "CAI-037",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-038": {
+      "code": "CAI-038",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-039": {
+      "code": "CAI-039",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-040": {
+      "code": "CAI-040",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-041": {
+      "code": "CAI-041",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-042": {
+      "code": "CAI-042",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-043": {
+      "code": "CAI-043",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "CAI-044": {
+      "code": "CAI-044",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "C",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-001": {
+      "code": "NSP-001",
+      "name": "سيارة ملاكي ",
+      "brand": "سوبارو ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-002": {
+      "code": "NSP-002",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-003": {
+      "code": "NSP-003",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-004": {
+      "code": "NSP-004",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-005": {
+      "code": "NSP-005",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-006": {
+      "code": "NSP-006",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-007": {
+      "code": "NSP-007",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-008": {
+      "code": "NSP-008",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-009": {
+      "code": "NSP-009",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-010": {
+      "code": "NSP-010",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-011": {
+      "code": "NSP-011",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-012": {
+      "code": "NSP-012",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-013": {
+      "code": "NSP-013",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-014": {
+      "code": "NSP-014",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-015": {
+      "code": "NSP-015",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-016": {
+      "code": "NSP-016",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-017": {
+      "code": "NSP-017",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-018": {
+      "code": "NSP-018",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "NSP-019": {
+      "code": "NSP-019",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "NS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-001": {
+      "code": "SSP-001",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا فورنتشر ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-002": {
+      "code": "SSP-002",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-003": {
+      "code": "SSP-003",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-004": {
+      "code": "SSP-004",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-005": {
+      "code": "SSP-005",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-006": {
+      "code": "SSP-006",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-007": {
+      "code": "SSP-007",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-008": {
+      "code": "SSP-008",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-009": {
+      "code": "SSP-009",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-010": {
+      "code": "SSP-010",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-011": {
+      "code": "SSP-011",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-012": {
+      "code": "SSP-012",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-013": {
+      "code": "SSP-013",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-014": {
+      "code": "SSP-014",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-015": {
+      "code": "SSP-015",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-016": {
+      "code": "SSP-016",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-017": {
+      "code": "SSP-017",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-018": {
+      "code": "SSP-018",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-019": {
+      "code": "SSP-019",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-020": {
+      "code": "SSP-020",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-021": {
+      "code": "SSP-021",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-022": {
+      "code": "SSP-022",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-023": {
+      "code": "SSP-023",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-024": {
+      "code": "SSP-024",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-025": {
+      "code": "SSP-025",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-026": {
+      "code": "SSP-026",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-027": {
+      "code": "SSP-027",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-028": {
+      "code": "SSP-028",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SSP-029": {
+      "code": "SSP-029",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "SS",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-001": {
+      "code": "DEL-001",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-002": {
+      "code": "DEL-002",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-003": {
+      "code": "DEL-003",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا- كرولا",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-004": {
+      "code": "DEL-004",
+      "name": "سيارة ملاكي ",
+      "brand": "M G ",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-005": {
+      "code": "DEL-005",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-006": {
+      "code": "DEL-006",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-007": {
+      "code": "DEL-007",
+      "name": "سيارة ملاكي ",
+      "brand": "اسكودا ",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-008": {
+      "code": "DEL-008",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-009": {
+      "code": "DEL-009",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى ",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-010": {
+      "code": "DEL-010",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى ",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-011": {
+      "code": "DEL-011",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-012": {
+      "code": "DEL-012",
+      "name": "سيارة ملاكي ",
+      "brand": "دايو لانوس",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-013": {
+      "code": "DEL-013",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-014": {
+      "code": "DEL-014",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-015": {
+      "code": "DEL-015",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-016": {
+      "code": "DEL-016",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-017": {
+      "code": "DEL-017",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-018": {
+      "code": "DEL-018",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-019": {
+      "code": "DEL-019",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-020": {
+      "code": "DEL-020",
+      "name": "سيارة ملاكي ",
+      "brand": " فيات تمبرا",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-021": {
+      "code": "DEL-021",
+      "name": "سيارة ملاكي ",
+      "brand": " فيات دوجان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-022": {
+      "code": "DEL-022",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-023": {
+      "code": "DEL-023",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-024": {
+      "code": "DEL-024",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-025": {
+      "code": "DEL-025",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-026": {
+      "code": "DEL-026",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-027": {
+      "code": "DEL-027",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-028": {
+      "code": "DEL-028",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-029": {
+      "code": "DEL-029",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-030": {
+      "code": "DEL-030",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-031": {
+      "code": "DEL-031",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-032": {
+      "code": "DEL-032",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-033": {
+      "code": "DEL-033",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-034": {
+      "code": "DEL-034",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-035": {
+      "code": "DEL-035",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-036": {
+      "code": "DEL-036",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-037": {
+      "code": "DEL-037",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-038": {
+      "code": "DEL-038",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-039": {
+      "code": "DEL-039",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-040": {
+      "code": "DEL-040",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "شيفرولية",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "DEL-041": {
+      "code": "DEL-041",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "DLT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-001": {
+      "code": "ALX-001",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا فورنتشر ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-002": {
+      "code": "ALX-002",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-003": {
+      "code": "ALX-003",
+      "name": "سيارة ملاكي ",
+      "brand": "نيسان",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-004": {
+      "code": "ALX-004",
+      "name": "سيارة ملاكي ",
+      "brand": "نيسان",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-005": {
+      "code": "ALX-005",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-006": {
+      "code": "ALX-006",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-007": {
+      "code": "ALX-007",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-008": {
+      "code": "ALX-008",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-009": {
+      "code": "ALX-009",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-010": {
+      "code": "ALX-010",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-011": {
+      "code": "ALX-011",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-012": {
+      "code": "ALX-012",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-013": {
+      "code": "ALX-013",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-014": {
+      "code": "ALX-014",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-015": {
+      "code": "ALX-015",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-016": {
+      "code": "ALX-016",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-017": {
+      "code": "ALX-017",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-018": {
+      "code": "ALX-018",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-019": {
+      "code": "ALX-019",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-020": {
+      "code": "ALX-020",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-021": {
+      "code": "ALX-021",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-022": {
+      "code": "ALX-022",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-023": {
+      "code": "ALX-023",
+      "name": "سياره (7 راكب )",
+      "brand": "فان",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-024": {
+      "code": "ALX-024",
+      "name": "سياره (7 راكب )",
+      "brand": "فان",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALX-025": {
+      "code": "ALX-025",
+      "name": "سياره( 7 راكب )",
+      "brand": "فان",
+      "branch": "ALX",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-001": {
+      "code": "UNK-001",
+      "name": "سيارة ملاكي ",
+      "brand": " رينو داستر",
+      "branch": "TNF",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-002": {
+      "code": "UNK-002",
+      "name": "سيارة ملاكي ",
+      "brand": "رينو داستر",
+      "branch": "TNF",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-003": {
+      "code": "UNK-003",
+      "name": "سيارة ملاكي ",
+      "brand": "اسكودا ",
+      "branch": "TNF",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-004": {
+      "code": "UNK-004",
+      "name": "سيارة ملاكي ",
+      "brand": "اسكودا ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-005": {
+      "code": "UNK-005",
+      "name": "سيارة ملاكي ",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-006": {
+      "code": "UNK-006",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "TNF",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-007": {
+      "code": "UNK-007",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "شيفرولية",
+      "branch": "TNF",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-029": {
+      "code": "UNK-029",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-056": {
+      "code": "UNK-056",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-057": {
+      "code": "UNK-057",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-058": {
+      "code": "UNK-058",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-059": {
+      "code": "UNK-059",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-060": {
+      "code": "UNK-060",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-061": {
+      "code": "UNK-061",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-062": {
+      "code": "UNK-062",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-063": {
+      "code": "UNK-063",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-064": {
+      "code": "UNK-064",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-065": {
+      "code": "UNK-065",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-066": {
+      "code": "UNK-066",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ــــــــ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-024": {
+      "code": "UNK-024",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "UNK-068": {
+      "code": "UNK-068",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "OPR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-001": {
+      "code": "ADM-001",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا فورنتشر ",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-002": {
+      "code": "ADM-002",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا فورنتشر ",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-003": {
+      "code": "ADM-003",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا فورنتشر ",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-004": {
+      "code": "ADM-004",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا- كرولا",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-005": {
+      "code": "ADM-005",
+      "name": "سيارة ملاكي ",
+      "brand": "اسكودا-اوكتافيا",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-006": {
+      "code": "ADM-006",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي -توسان",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-007": {
+      "code": "ADM-007",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-008": {
+      "code": "ADM-008",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-009": {
+      "code": "ADM-009",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى - اكسنت",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-010": {
+      "code": "ADM-010",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-011": {
+      "code": "ADM-011",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-012": {
+      "code": "ADM-012",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-013": {
+      "code": "ADM-013",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-014": {
+      "code": "ADM-014",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-015": {
+      "code": "ADM-015",
+      "name": "سيارة ملاكي ",
+      "brand": " فولكس فاغن باسات",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-016": {
+      "code": "ADM-016",
+      "name": "سيارة ملاكي ",
+      "brand": " فولكس فاغن باسات",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-017": {
+      "code": "ADM-017",
+      "name": "سيارة ملاكي ",
+      "brand": "دايو لانوس",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-018": {
+      "code": "ADM-018",
+      "name": "سيارة ملاكي ",
+      "brand": "جيب شيروكي  -جراند ",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-019": {
+      "code": "ADM-019",
+      "name": "سيارة ملاكي ",
+      "brand": "جيب شروكي",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-020": {
+      "code": "ADM-020",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "تويوتا",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-021": {
+      "code": "ADM-021",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-022": {
+      "code": "ADM-022",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-023": {
+      "code": "ADM-023",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-024": {
+      "code": "ADM-024",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ADM-025": {
+      "code": "ADM-025",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "ADM",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-001": {
+      "code": "WPO-001",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-002": {
+      "code": "WPO-002",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-003": {
+      "code": "WPO-003",
+      "name": "سيارة ملاكي ",
+      "brand": "نيسان-سنترا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-004": {
+      "code": "WPO-004",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى ",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-005": {
+      "code": "WPO-005",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-006": {
+      "code": "WPO-006",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-007": {
+      "code": "WPO-007",
+      "name": "ليموزين",
+      "brand": "نصر شاهين",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-008": {
+      "code": "WPO-008",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-009": {
+      "code": "WPO-009",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-010": {
+      "code": "WPO-010",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-011": {
+      "code": "WPO-011",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-012": {
+      "code": "WPO-012",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "شيفرولية",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-013": {
+      "code": "WPO-013",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-014": {
+      "code": "WPO-014",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-015": {
+      "code": "WPO-015",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-016": {
+      "code": "WPO-016",
+      "name": "أتوبيس 29 راكب",
+      "brand": "شيفرولية",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-017": {
+      "code": "WPO-017",
+      "name": "أتوبيس 29 راكب",
+      "brand": "شيفرولية",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-018": {
+      "code": "WPO-018",
+      "name": "أتوبيس 29 راكب",
+      "brand": "تويوتا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "WPO-019": {
+      "code": "WPO-019",
+      "name": "أتوبيس 29 راكب",
+      "brand": "تويوتا",
+      "branch": "WRK",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-001": {
+      "code": "HEQ-001",
+      "name": "سيارة ملاكي ",
+      "brand": " فيات دوجان",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-002": {
+      "code": "HEQ-002",
+      "name": "سيارة ملاكي ",
+      "brand": " فيات دوجان",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-003": {
+      "code": "HEQ-003",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-004": {
+      "code": "HEQ-004",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-005": {
+      "code": "HEQ-005",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-006": {
+      "code": "HEQ-006",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-007": {
+      "code": "HEQ-007",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-008": {
+      "code": "HEQ-008",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-009": {
+      "code": "HEQ-009",
+      "name": "سيارة نقل كابينة واحد",
+      "brand": "فورد ",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-010": {
+      "code": "HEQ-010",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "HEQ-011": {
+      "code": "HEQ-011",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "MWQ",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-001": {
+      "code": "SHB-001",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى ",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-002": {
+      "code": "SHB-002",
+      "name": "سيارة ملاكي ",
+      "brand": " جيب شيروكى",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-003": {
+      "code": "SHB-003",
+      "name": "سيارة ملاكي ",
+      "brand": " جيب شيروكى",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-004": {
+      "code": "SHB-004",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-005": {
+      "code": "SHB-005",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-006": {
+      "code": "SHB-006",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-007": {
+      "code": "SHB-007",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-008": {
+      "code": "SHB-008",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-009": {
+      "code": "SHB-009",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-010": {
+      "code": "SHB-010",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-011": {
+      "code": "SHB-011",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "شيفرولية",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "SHB-012": {
+      "code": "SHB-012",
+      "name": "سيارة فان",
+      "brand": "ميتسوبيشي ",
+      "branch": "SHB",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "GMR-001": {
+      "code": "GMR-001",
+      "name": "سيارة ملاكي ",
+      "brand": "رينو",
+      "branch": "GMR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "GMR-002": {
+      "code": "GMR-002",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى ",
+      "branch": "GMR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "GMR-003": {
+      "code": "GMR-003",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "GMR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "GMR-004": {
+      "code": "GMR-004",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "GMR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "GMR-005": {
+      "code": "GMR-005",
+      "name": "سيارة ربع نقل",
+      "brand": "سوزوكي",
+      "branch": "GMR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "KHT-001": {
+      "code": "KHT-001",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "GMR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "KHT-002": {
+      "code": "KHT-002",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "GMR",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-001": {
+      "code": "BHT-001",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا- كرولا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-002": {
+      "code": "BHT-002",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-003": {
+      "code": "BHT-003",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا- كرولا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-004": {
+      "code": "BHT-004",
+      "name": "سيارة ملاكي ",
+      "brand": "تويوتا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-005": {
+      "code": "BHT-005",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-006": {
+      "code": "BHT-006",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-007": {
+      "code": "BHT-007",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-008": {
+      "code": "BHT-008",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-009": {
+      "code": "BHT-009",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية - أوبترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-010": {
+      "code": "BHT-010",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفورلية لانوس",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-011": {
+      "code": "BHT-011",
+      "name": "سيارة ملاكي ",
+      "brand": "شيفرولية",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-012": {
+      "code": "BHT-012",
+      "name": "سيارة ملاكي ",
+      "brand": "اسكودا-اوكتافيا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-013": {
+      "code": "BHT-013",
+      "name": "سيارة ملاكي ",
+      "brand": "اسكودا ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-014": {
+      "code": "BHT-014",
+      "name": "سيارة ملاكي ",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-015": {
+      "code": "BHT-015",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-016": {
+      "code": "BHT-016",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-017": {
+      "code": "BHT-017",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-018": {
+      "code": "BHT-018",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-019": {
+      "code": "BHT-019",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-020": {
+      "code": "BHT-020",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-021": {
+      "code": "BHT-021",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-022": {
+      "code": "BHT-022",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-023": {
+      "code": "BHT-023",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-024": {
+      "code": "BHT-024",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-025": {
+      "code": "BHT-025",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-026": {
+      "code": "BHT-026",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-027": {
+      "code": "BHT-027",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-028": {
+      "code": "BHT-028",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-029": {
+      "code": "BHT-029",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-030": {
+      "code": "BHT-030",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداى - اكسنت",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-031": {
+      "code": "BHT-031",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-032": {
+      "code": "BHT-032",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-033": {
+      "code": "BHT-033",
+      "name": "سيارة ملاكي ",
+      "brand": " هيونداي النترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-034": {
+      "code": "BHT-034",
+      "name": "سيارة ملاكي ",
+      "brand": "هيونداي فيرنا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-035": {
+      "code": "BHT-035",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-036": {
+      "code": "BHT-036",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-037": {
+      "code": "BHT-037",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-038": {
+      "code": "BHT-038",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-039": {
+      "code": "BHT-039",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-040": {
+      "code": "BHT-040",
+      "name": "سيارة ملاكي ",
+      "brand": "ميتسوبيشي ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-041": {
+      "code": "BHT-041",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-042": {
+      "code": "BHT-042",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-043": {
+      "code": "BHT-043",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-044": {
+      "code": "BHT-044",
+      "name": "سيارة ملاكي ",
+      "brand": "متسوبيشي-لانسر",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-045": {
+      "code": "BHT-045",
+      "name": "سيارة ملاكي ",
+      "brand": " فولكس فاغن باسات",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-046": {
+      "code": "BHT-046",
+      "name": "سيارة ملاكي ",
+      "brand": " فولكس فاغن باسات",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-047": {
+      "code": "BHT-047",
+      "name": "سيارة ملاكي ",
+      "brand": "اوبل فيكترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-048": {
+      "code": "BHT-048",
+      "name": "سيارة ملاكي ",
+      "brand": "اوبل فيكترا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-049": {
+      "code": "BHT-049",
+      "name": "سيارة ملاكي ",
+      "brand": "اوبل",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-050": {
+      "code": "BHT-050",
+      "name": "سيارة ملاكي ",
+      "brand": "دايو لانوس",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-051": {
+      "code": "BHT-051",
+      "name": "سيارة ملاكي ",
+      "brand": "مرسيدس",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-052": {
+      "code": "BHT-052",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-053": {
+      "code": "BHT-053",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-054": {
+      "code": "BHT-054",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-055": {
+      "code": "BHT-055",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-056": {
+      "code": "BHT-056",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-057": {
+      "code": "BHT-057",
+      "name": "سيارة ملاكي ",
+      "brand": "شاهين",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-058": {
+      "code": "BHT-058",
+      "name": "سيارة ملاكي ",
+      "brand": " فيات دوجان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-059": {
+      "code": "BHT-059",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-060": {
+      "code": "BHT-060",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-061": {
+      "code": "BHT-061",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-062": {
+      "code": "BHT-062",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-063": {
+      "code": "BHT-063",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-064": {
+      "code": "BHT-064",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-065": {
+      "code": "BHT-065",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-066": {
+      "code": "BHT-066",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-067": {
+      "code": "BHT-067",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-068": {
+      "code": "BHT-068",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-069": {
+      "code": "BHT-069",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-070": {
+      "code": "BHT-070",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-071": {
+      "code": "BHT-071",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ــــــــ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-072": {
+      "code": "BHT-072",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-073": {
+      "code": "BHT-073",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "نيسان ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-074": {
+      "code": "BHT-074",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-075": {
+      "code": "BHT-075",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-076": {
+      "code": "BHT-076",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-077": {
+      "code": "BHT-077",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-078": {
+      "code": "BHT-078",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-079": {
+      "code": "BHT-079",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-080": {
+      "code": "BHT-080",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-081": {
+      "code": "BHT-081",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-082": {
+      "code": "BHT-082",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-083": {
+      "code": "BHT-083",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-084": {
+      "code": "BHT-084",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ايسوزو",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-085": {
+      "code": "BHT-085",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-086": {
+      "code": "BHT-086",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-087": {
+      "code": "BHT-087",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-088": {
+      "code": "BHT-088",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-089": {
+      "code": "BHT-089",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-090": {
+      "code": "BHT-090",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-091": {
+      "code": "BHT-091",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-092": {
+      "code": "BHT-092",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-093": {
+      "code": "BHT-093",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-094": {
+      "code": "BHT-094",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-095": {
+      "code": "BHT-095",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "فورد ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-096": {
+      "code": "BHT-096",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "تويوتا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-097": {
+      "code": "BHT-097",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "تويوتا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-098": {
+      "code": "BHT-098",
+      "name": "سيارة نصف نقل دوبل كابينه",
+      "brand": "ميتسوبيشي ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-099": {
+      "code": "BHT-099",
+      "name": "سيارة نقل كابينة مزدوجة",
+      "brand": "ميتسوبيشي ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-100": {
+      "code": "BHT-100",
+      "name": "سيارة نصف نقل دوبل كابينه",
+      "brand": "شيفرولية",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-101": {
+      "code": "BHT-101",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-102": {
+      "code": "BHT-102",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-103": {
+      "code": "BHT-103",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-104": {
+      "code": "BHT-104",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-105": {
+      "code": "BHT-105",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-106": {
+      "code": "BHT-106",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-107": {
+      "code": "BHT-107",
+      "name": "سياره ( 7 راكب )",
+      "brand": "فان",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-108": {
+      "code": "BHT-108",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-109": {
+      "code": "BHT-109",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا-هاي ايس",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-110": {
+      "code": "BHT-110",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا-هاي ايس",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-111": {
+      "code": "BHT-111",
+      "name": "ميكروباص -اتوبيس ",
+      "brand": "نيسان ",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-112": {
+      "code": "BHT-112",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا-هاي ايس",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-113": {
+      "code": "BHT-113",
+      "name": "سياره ميكروباص ",
+      "brand": "تويوتا (دفن موتي)",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "BHT-114": {
+      "code": "BHT-114",
+      "name": "سيارة اسعاف",
+      "brand": "G M E",
+      "branch": "BHT",
+      "type": "vehicle",
+      "status": "available"
+    },
+    "ALXE-001": {
+      "code": "ALXE-001",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  924K",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-002": {
+      "code": "ALXE-002",
+      "name": "محطة خلط خرسانة",
+      "brand": "كوجى",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-003": {
+      "code": "ALXE-003",
+      "name": "محطة خلط خرسانة",
+      "brand": "اسكوما",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-004": {
+      "code": "ALXE-004",
+      "name": "مولد كهرباء 7 ك",
+      "brand": "هوندا",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-005": {
+      "code": "ALXE-005",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-006": {
+      "code": "ALXE-006",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-007": {
+      "code": "ALXE-007",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-008": {
+      "code": "ALXE-008",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس ",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-009": {
+      "code": "ALXE-009",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-010": {
+      "code": "ALXE-010",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-011": {
+      "code": "ALXE-011",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-012": {
+      "code": "ALXE-012",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-013": {
+      "code": "ALXE-013",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-014": {
+      "code": "ALXE-014",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-015": {
+      "code": "ALXE-015",
+      "name": "مضخة خرسانة شيفنج",
+      "brand": "مرسيدس",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-016": {
+      "code": "ALXE-016",
+      "name": "مضخة خرسانة شيفنج",
+      "brand": "افيكو",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "ALXE-017": {
+      "code": "ALXE-017",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "رينو",
+      "branch": "ALX",
+      "type": "equipment",
+      "status": "available"
+    },
+    "DELT-001": {
+      "code": "DELT-001",
+      "name": "ماكينة كهرباء 7 ك",
+      "brand": "هوندا",
+      "branch": "DLT",
+      "type": "equipment",
+      "status": "available"
+    },
+    "DELT-002": {
+      "code": "DELT-002",
+      "name": "ماكينة كهرباء 5 ك",
+      "brand": "هوندا",
+      "branch": "DLT",
+      "type": "equipment",
+      "status": "available"
+    },
+    "DELT-003": {
+      "code": "DELT-003",
+      "name": "ماكينة كهرباء 5 ك",
+      "brand": "هوندا",
+      "branch": "DLT",
+      "type": "equipment",
+      "status": "available"
+    },
+    "DELT-004": {
+      "code": "DELT-004",
+      "name": "جرار زراعى",
+      "brand": "نصر65",
+      "branch": "DLT",
+      "type": "equipment",
+      "status": "available"
+    },
+    "DELT-005": {
+      "code": "DELT-005",
+      "name": "جرار زراعى",
+      "brand": "نصر65",
+      "branch": "DLT",
+      "type": "equipment",
+      "status": "available"
+    },
+    "DELT-006": {
+      "code": "DELT-006",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "DLT",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-001": {
+      "code": "CAIB-001",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "مان",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-002": {
+      "code": "CAIB-002",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-003": {
+      "code": "CAIB-003",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-004": {
+      "code": "CAIB-004",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-005": {
+      "code": "CAIB-005",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-006": {
+      "code": "CAIB-006",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  B950",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-007": {
+      "code": "CAIB-007",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  B950",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-008": {
+      "code": "CAIB-008",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  930",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-009": {
+      "code": "CAIB-009",
+      "name": "لودر علي كاوتش ",
+      "brand": "كوازكى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-010": {
+      "code": "CAIB-010",
+      "name": "لودر علي كاوتش ",
+      "brand": " بوبكات A770",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-011": {
+      "code": "CAIB-011",
+      "name": "لودر علي كاوتش ",
+      "brand": " بوبكات A630",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-012": {
+      "code": "CAIB-012",
+      "name": "لودر علي كاوتش ",
+      "brand": " بوبكات A630",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-013": {
+      "code": "CAIB-013",
+      "name": "محطة خلط خرسانة",
+      "brand": "أرباو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-014": {
+      "code": "CAIB-014",
+      "name": "محطة خلط خرسانة",
+      "brand": "سفنكس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-015": {
+      "code": "CAIB-015",
+      "name": "محطة خلط خرسانة",
+      "brand": "جراند",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-016": {
+      "code": "CAIB-016",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-017": {
+      "code": "CAIB-017",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-018": {
+      "code": "CAIB-018",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-019": {
+      "code": "CAIB-019",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-020": {
+      "code": "CAIB-020",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-021": {
+      "code": "CAIB-021",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-022": {
+      "code": "CAIB-022",
+      "name": "مولد كهرباء",
+      "brand": "صينى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-023": {
+      "code": "CAIB-023",
+      "name": "مولد كهرباء",
+      "brand": "صينى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-024": {
+      "code": "CAIB-024",
+      "name": "وحدة توليد كهرباء",
+      "brand": "كمنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-025": {
+      "code": "CAIB-025",
+      "name": "مولد كهرباء",
+      "brand": "مصانع",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-026": {
+      "code": "CAIB-026",
+      "name": "مولد كهرباء",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-027": {
+      "code": "CAIB-027",
+      "name": "مولد كهرباء",
+      "brand": "هوندا برافا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-028": {
+      "code": "CAIB-028",
+      "name": "برج انارة على عجل ",
+      "brand": "هيومنسا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-029": {
+      "code": "CAIB-029",
+      "name": "سيارة خلط خرسانه ",
+      "brand": "ماز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-030": {
+      "code": "CAIB-030",
+      "name": "سياره خلط خرسانة ",
+      "brand": "ماز ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-031": {
+      "code": "CAIB-031",
+      "name": "سياره خلط خرسانة ",
+      "brand": "ماز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-032": {
+      "code": "CAIB-032",
+      "name": "سياره خلط خرسانة ",
+      "brand": "ماز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-033": {
+      "code": "CAIB-033",
+      "name": "سياره خلط خرسانة ",
+      "brand": "ماذ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-034": {
+      "code": "CAIB-034",
+      "name": "سياره خلط خرسانة ",
+      "brand": "ماذ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-035": {
+      "code": "CAIB-035",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-036": {
+      "code": "CAIB-036",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-037": {
+      "code": "CAIB-037",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-038": {
+      "code": "CAIB-038",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-039": {
+      "code": "CAIB-039",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-040": {
+      "code": "CAIB-040",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-041": {
+      "code": "CAIB-041",
+      "name": "سياره خلط خرسانه ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-042": {
+      "code": "CAIB-042",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-043": {
+      "code": "CAIB-043",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-044": {
+      "code": "CAIB-044",
+      "name": "سياره خلط خرسانة ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-045": {
+      "code": "CAIB-045",
+      "name": "مضخة خرسانة شيفنج",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-046": {
+      "code": "CAIB-046",
+      "name": "مضخة خرسانة شيفنج",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-047": {
+      "code": "CAIB-047",
+      "name": "مضخة خرسانة",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-048": {
+      "code": "CAIB-048",
+      "name": "مضخة خرسانة شيفنج",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-049": {
+      "code": "CAIB-049",
+      "name": "جرار زراعى",
+      "brand": "بيلا روسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-050": {
+      "code": "CAIB-050",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-051": {
+      "code": "CAIB-051",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-052": {
+      "code": "CAIB-052",
+      "name": "جرار زراعى",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-053": {
+      "code": "CAIB-053",
+      "name": "جرار زراعى",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-054": {
+      "code": "CAIB-054",
+      "name": "جرار زراعى",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-055": {
+      "code": "CAIB-055",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-056": {
+      "code": "CAIB-056",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-057": {
+      "code": "CAIB-057",
+      "name": "لودر علي كاوتش ",
+      "brand": "كاتربيلر  908H2",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-058": {
+      "code": "CAIB-058",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-059": {
+      "code": "CAIB-059",
+      "name": "جرار زراعي 65ح",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "CAIB-060": {
+      "code": "CAIB-060",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-001": {
+      "code": "MCAB-001",
+      "name": "بلدوزر علي كاتينه ",
+      "brand": "كاتر بيللر D7G",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-002": {
+      "code": "MCAB-002",
+      "name": "حفار علي كاتينه",
+      "brand": "دوسان DX420",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-003": {
+      "code": "MCAB-003",
+      "name": "حفار علي كاتينه",
+      "brand": "دوسان DX300",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-004": {
+      "code": "MCAB-004",
+      "name": "حفار علي كاتينه",
+      "brand": "دوسان DX300",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-005": {
+      "code": "MCAB-005",
+      "name": "حفار علي كاتينه",
+      "brand": "دوسان DX300",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-006": {
+      "code": "MCAB-006",
+      "name": "حفار علي كاتينه",
+      "brand": "دوسان DX300",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-007": {
+      "code": "MCAB-007",
+      "name": "حفار علي كاتينه",
+      "brand": "كاتربيلر B325",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-008": {
+      "code": "MCAB-008",
+      "name": "حفار علي كاتينه",
+      "brand": "كاتربيلر B325",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-009": {
+      "code": "MCAB-009",
+      "name": "شاكوش تكسير  حفار ",
+      "brand": "فوركاوا F35",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-010": {
+      "code": "MCAB-010",
+      "name": "شاكوش تكسير  حفار ",
+      "brand": "فوركاوا F35",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-011": {
+      "code": "MCAB-011",
+      "name": "شاكوش تكسير  حفار ",
+      "brand": "FJX375",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-012": {
+      "code": "MCAB-012",
+      "name": "شاكوش تكسير  حفار ",
+      "brand": " FX3 / 375",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-013": {
+      "code": "MCAB-013",
+      "name": "شاكوش تكسير  حفار ",
+      "brand": " FX3 / 375",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-014": {
+      "code": "MCAB-014",
+      "name": "شاكوش تكسير  حفار ",
+      "brand": " FX3 / 375",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-015": {
+      "code": "MCAB-015",
+      "name": "شاكوش تكسير  حفار ",
+      "brand": " FX3 / 375",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-016": {
+      "code": "MCAB-016",
+      "name": "شاكوش حفار ",
+      "brand": "020H P ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-017": {
+      "code": "MCAB-017",
+      "name": "شاكوش حفار ",
+      "brand": "020H P ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-018": {
+      "code": "MCAB-018",
+      "name": "وحدة تقطيع ",
+      "brand": "ايرتك",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-019": {
+      "code": "MCAB-019",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-020": {
+      "code": "MCAB-020",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-021": {
+      "code": "MCAB-021",
+      "name": "لودر علي كاوتش ",
+      "brand": " كوازاكي Z85",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-022": {
+      "code": "MCAB-022",
+      "name": "لودر علي كاوتش ",
+      "brand": " ليبهير  508",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-023": {
+      "code": "MCAB-023",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-024": {
+      "code": "MCAB-024",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  F950",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-025": {
+      "code": "MCAB-025",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  20950",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-026": {
+      "code": "MCAB-026",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  B950",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-027": {
+      "code": "MCAB-027",
+      "name": "لودر علي كاوتش ",
+      "brand": "كاتربيللر 950",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-028": {
+      "code": "MCAB-028",
+      "name": "لودر علي كاوتش ",
+      "brand": " كوازاكي Z85",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-029": {
+      "code": "MCAB-029",
+      "name": "لودر علي كاوتش ",
+      "brand": " بوبكات A350",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-030": {
+      "code": "MCAB-030",
+      "name": "مولد كهرباء",
+      "brand": "اسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-031": {
+      "code": "MCAB-031",
+      "name": "مولد كهرباء",
+      "brand": "افار",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-032": {
+      "code": "MCAB-032",
+      "name": "محول كهربائى ثلاثى الاوجه",
+      "brand": "الماكو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-033": {
+      "code": "MCAB-033",
+      "name": "مولد كهرباء هوندا ",
+      "brand": "برافا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-034": {
+      "code": "MCAB-034",
+      "name": "مولد كهرباء هوندا ",
+      "brand": "برافا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-035": {
+      "code": "MCAB-035",
+      "name": "وحدة توليد كهرباء 60كيلو وات ",
+      "brand": " بيركينز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-036": {
+      "code": "MCAB-036",
+      "name": "مولد كهرباء كاتم للصوت",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-037": {
+      "code": "MCAB-037",
+      "name": "مولد كهرباء كاتم للصوت",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-038": {
+      "code": "MCAB-038",
+      "name": "مولد كهرباء كاتم للصوت",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-039": {
+      "code": "MCAB-039",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-040": {
+      "code": "MCAB-040",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-041": {
+      "code": "MCAB-041",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-042": {
+      "code": "MCAB-042",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-043": {
+      "code": "MCAB-043",
+      "name": "مولد كهرباء 6 سلندر",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-044": {
+      "code": "MCAB-044",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-045": {
+      "code": "MCAB-045",
+      "name": "مولد كهرباء بدون بطاريه ومارش",
+      "brand": "بيركنز",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-046": {
+      "code": "MCAB-046",
+      "name": "مولد كهرباء",
+      "brand": "بوش",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-047": {
+      "code": "MCAB-047",
+      "name": "مولد كهرباء + كابينة صوت",
+      "brand": "دويتس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-048": {
+      "code": "MCAB-048",
+      "name": "مولد كهرباء",
+      "brand": "دويتس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-049": {
+      "code": "MCAB-049",
+      "name": "فارغة مولد كاتم للصوت",
+      "brand": "دويتس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-050": {
+      "code": "MCAB-050",
+      "name": "مولد كهرباء",
+      "brand": "صينى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-051": {
+      "code": "MCAB-051",
+      "name": "مولد كهرباء",
+      "brand": "صينى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-052": {
+      "code": "MCAB-052",
+      "name": "مولد كهرباء",
+      "brand": "صينى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-053": {
+      "code": "MCAB-053",
+      "name": "مولد كهرباء",
+      "brand": "فولفو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-054": {
+      "code": "MCAB-054",
+      "name": "وحدة توليد كهرباء",
+      "brand": "فولفو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-055": {
+      "code": "MCAB-055",
+      "name": "وحده توليد كهرباء ",
+      "brand": "فولفو ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-056": {
+      "code": "MCAB-056",
+      "name": "مولد كهرباء",
+      "brand": "كاتر بلر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-057": {
+      "code": "MCAB-057",
+      "name": "مولد كهرباء",
+      "brand": "كاتر بلر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-058": {
+      "code": "MCAB-058",
+      "name": "وحدة توليد كهرباء",
+      "brand": "كاتر بلر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-059": {
+      "code": "MCAB-059",
+      "name": "مولد كهرباء",
+      "brand": "ماجروس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-060": {
+      "code": "MCAB-060",
+      "name": "مولد كهرباء",
+      "brand": "مصانع",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-061": {
+      "code": "MCAB-061",
+      "name": "مولد كهرباء بدون وحدة توليد",
+      "brand": "مصانع",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-062": {
+      "code": "MCAB-062",
+      "name": "وحدة توليد كهرباء",
+      "brand": "مصانع",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-063": {
+      "code": "MCAB-063",
+      "name": "وحدة توليد كهرباء",
+      "brand": "مصانع",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-064": {
+      "code": "MCAB-064",
+      "name": "مولد كهرباء",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-065": {
+      "code": "MCAB-065",
+      "name": "مولد كهرباء",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-066": {
+      "code": "MCAB-066",
+      "name": "مولد كهرباء",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-067": {
+      "code": "MCAB-067",
+      "name": "مولد كهرباء",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-068": {
+      "code": "MCAB-068",
+      "name": "مولد كهرباء",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-069": {
+      "code": "MCAB-069",
+      "name": "مولد كهرباء 5 ك",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-070": {
+      "code": "MCAB-070",
+      "name": "مولد كهرباء 7 ك",
+      "brand": "هوندا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-071": {
+      "code": "MCAB-071",
+      "name": "مولد كهرباء ( برج )",
+      "brand": "هوندا برافا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-072": {
+      "code": "MCAB-072",
+      "name": "مولد كهرباء 45ك",
+      "brand": 1,
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-073": {
+      "code": "MCAB-073",
+      "name": "مولد كهرباء كاتم للصوت",
+      "brand": 2014,
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-074": {
+      "code": "MCAB-074",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-075": {
+      "code": "MCAB-075",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-076": {
+      "code": "MCAB-076",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-077": {
+      "code": "MCAB-077",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-078": {
+      "code": "MCAB-078",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-079": {
+      "code": "MCAB-079",
+      "name": "مولد كهرباء 20 ك موتور رقم 979926",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-080": {
+      "code": "MCAB-080",
+      "name": "مولد كهرباء (كاتم صوت)",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-081": {
+      "code": "MCAB-081",
+      "name": "وحده توليد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-082": {
+      "code": "MCAB-082",
+      "name": "وحده توليد كهرباء ",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-083": {
+      "code": "MCAB-083",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-084": {
+      "code": "MCAB-084",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-085": {
+      "code": "MCAB-085",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-086": {
+      "code": "MCAB-086",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-087": {
+      "code": "MCAB-087",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-088": {
+      "code": "MCAB-088",
+      "name": "مولد كهرباء",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-089": {
+      "code": "MCAB-089",
+      "name": "برج اناره 4 كشاف بدون لمبه ",
+      "brand": "هيموتسا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-090": {
+      "code": "MCAB-090",
+      "name": "برج اناره ",
+      "brand": "هيموماسا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-091": {
+      "code": "MCAB-091",
+      "name": "برج انارة",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-092": {
+      "code": "MCAB-092",
+      "name": "جريدر ",
+      "brand": "G990",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-093": {
+      "code": "MCAB-093",
+      "name": "ونش شوكة كلارك كود ( 1 )",
+      "brand": "تيوتا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-094": {
+      "code": "MCAB-094",
+      "name": "ونش شوكة كلارك كود ( 2 )",
+      "brand": "تيوتا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-095": {
+      "code": "MCAB-095",
+      "name": "ونش برجى مفكك",
+      "brand": "بوتان",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-096": {
+      "code": "MCAB-096",
+      "name": "ونش تلسكوبي",
+      "brand": "P&H",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-097": {
+      "code": "MCAB-097",
+      "name": "ونش تلسكوبي",
+      "brand": "GROOV",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-098": {
+      "code": "MCAB-098",
+      "name": "ونش تلسكوبي",
+      "brand": "GROOV",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-099": {
+      "code": "MCAB-099",
+      "name": "كلارك شوكه 5 طن",
+      "brand": "كوماتسو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-100": {
+      "code": "MCAB-100",
+      "name": "سيارة نقل قلاب ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-101": {
+      "code": "MCAB-101",
+      "name": "سيارة نقل قلاب ",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-102": {
+      "code": "MCAB-102",
+      "name": "سيارة نقل قلاب ",
+      "brand": "إسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-103": {
+      "code": "MCAB-103",
+      "name": "سيارة نقل قلاب ",
+      "brand": "إسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-104": {
+      "code": "MCAB-104",
+      "name": "سيارة نقل قلاب ",
+      "brand": "إسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-105": {
+      "code": "MCAB-105",
+      "name": "سيارة نقل قلاب ",
+      "brand": "إسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-106": {
+      "code": "MCAB-106",
+      "name": "سيارة نقل قلاب ",
+      "brand": "افيكو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-107": {
+      "code": "MCAB-107",
+      "name": "سيارة نقل قلاب ",
+      "brand": "اسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-108": {
+      "code": "MCAB-108",
+      "name": "سيارة نقل قلاب",
+      "brand": "اسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-109": {
+      "code": "MCAB-109",
+      "name": "سيارة نقل قلاب ",
+      "brand": "ماجروس ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-110": {
+      "code": "MCAB-110",
+      "name": "سيارة نقل قلاب",
+      "brand": "ماجروس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-111": {
+      "code": "MCAB-111",
+      "name": "سيارة نقل تقيل (راس جرار)",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-112": {
+      "code": "MCAB-112",
+      "name": "سياره نقل تقيل (راس جرار )",
+      "brand": "مرسيدس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-113": {
+      "code": "MCAB-113",
+      "name": "سيارة نقل تقيل (راس جرار)",
+      "brand": "مرسيدس ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-114": {
+      "code": "MCAB-114",
+      "name": "سيارة نقل تقيل (راس جرار)",
+      "brand": "فولفو ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-115": {
+      "code": "MCAB-115",
+      "name": "سياره نقل تقيل (راس جرار )",
+      "brand": "فولفو ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-116": {
+      "code": "MCAB-116",
+      "name": "مقطورة ",
+      "brand": "دولي ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-117": {
+      "code": "MCAB-117",
+      "name": "مقطوره سطح 3 أكس ",
+      "brand": "الاصلية",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-118": {
+      "code": "MCAB-118",
+      "name": "مقطورة 3 أكس",
+      "brand": "الاصلية",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-119": {
+      "code": "MCAB-119",
+      "name": "مقطورة سطح 3 أكس ",
+      "brand": "الاصلية",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-120": {
+      "code": "MCAB-120",
+      "name": "مقطورة سيارة سطح",
+      "brand": "NONE",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-121": {
+      "code": "MCAB-121",
+      "name": "كساحة 3 اكس ",
+      "brand": "الاصلية",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-122": {
+      "code": "MCAB-122",
+      "name": "مقطورة",
+      "brand": "بارليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-123": {
+      "code": "MCAB-123",
+      "name": "سيارة نقل جامبو ",
+      "brand": "شيفروليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-124": {
+      "code": "MCAB-124",
+      "name": "سيارة نقل جامبو ",
+      "brand": "شيفروليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-125": {
+      "code": "MCAB-125",
+      "name": "سيارة نقل جامبو ",
+      "brand": "شيفروليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-126": {
+      "code": "MCAB-126",
+      "name": "سيارة نقل جامبو ",
+      "brand": "شيفروليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-127": {
+      "code": "MCAB-127",
+      "name": "سيارة نقل جامبو ",
+      "brand": "شيفروليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-128": {
+      "code": "MCAB-128",
+      "name": "سيارة نقل جامبو ",
+      "brand": "شيفروليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-129": {
+      "code": "MCAB-129",
+      "name": "سيارة نقل جامبو ",
+      "brand": "شيفروليه",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-130": {
+      "code": "MCAB-130",
+      "name": "سياره نقل جامبو ",
+      "brand": "بيدفورد",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-131": {
+      "code": "MCAB-131",
+      "name": "سياره نقل جامبو ",
+      "brand": "بيدفورد",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-132": {
+      "code": "MCAB-132",
+      "name": "سياره نقل طبليه",
+      "brand": "ماجروس ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-133": {
+      "code": "MCAB-133",
+      "name": "سياره نقل سطح ",
+      "brand": "ماجروس ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-134": {
+      "code": "MCAB-134",
+      "name": "سيارة نقل سطح طبلية",
+      "brand": "ماجروس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-135": {
+      "code": "MCAB-135",
+      "name": "سيارة نقل سطح",
+      "brand": "اسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-136": {
+      "code": "MCAB-136",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "إسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-137": {
+      "code": "MCAB-137",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "إسكانيا",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-138": {
+      "code": "MCAB-138",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "رينو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-139": {
+      "code": "MCAB-139",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "رينو",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-140": {
+      "code": "MCAB-140",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "نصر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-141": {
+      "code": "MCAB-141",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "نصر ",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-142": {
+      "code": "MCAB-142",
+      "name": "جرار زراعي ",
+      "brand": "روماني",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-143": {
+      "code": "MCAB-143",
+      "name": "جرار زراعى",
+      "brand": "بيلا روسي",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-144": {
+      "code": "MCAB-144",
+      "name": "جرار زراعي ",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-145": {
+      "code": "MCAB-145",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-146": {
+      "code": "MCAB-146",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسي",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-147": {
+      "code": "MCAB-147",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسي",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-148": {
+      "code": "MCAB-148",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسي",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-149": {
+      "code": "MCAB-149",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسي",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-150": {
+      "code": "MCAB-150",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسي",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-151": {
+      "code": "MCAB-151",
+      "name": "جرار زراعى",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-152": {
+      "code": "MCAB-152",
+      "name": "جرار زراعى",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-153": {
+      "code": "MCAB-153",
+      "name": "جرار زراعى",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-154": {
+      "code": "MCAB-154",
+      "name": "جرار زراعي ",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-155": {
+      "code": "MCAB-155",
+      "name": "جرار زراعي ",
+      "brand": "رومانى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-156": {
+      "code": "MCAB-156",
+      "name": "جرار زراعي ",
+      "brand": "نصر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-157": {
+      "code": "MCAB-157",
+      "name": "جرار زراعي ",
+      "brand": "نصر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-158": {
+      "code": "MCAB-158",
+      "name": "جرار زراعي ",
+      "brand": "نصر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-159": {
+      "code": "MCAB-159",
+      "name": "جرار زراعى",
+      "brand": "بيـــلاروس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-160": {
+      "code": "MCAB-160",
+      "name": "جرار زراعى",
+      "brand": "بيـــلاروس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-161": {
+      "code": "MCAB-161",
+      "name": "جرار زراعى",
+      "brand": "بيـــلاروس",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-162": {
+      "code": "MCAB-162",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-163": {
+      "code": "MCAB-163",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-164": {
+      "code": "MCAB-164",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-165": {
+      "code": "MCAB-165",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-166": {
+      "code": "MCAB-166",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-167": {
+      "code": "MCAB-167",
+      "name": "جرار زراعى",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-168": {
+      "code": "MCAB-168",
+      "name": "مكنسه بوبكات ",
+      "brand": "POP-CAT",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-169": {
+      "code": "MCAB-169",
+      "name": "مكنسة هيدروليك ",
+      "brand": "محلية الصنع",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-170": {
+      "code": "MCAB-170",
+      "name": "هراس تربه 2 حجر ",
+      "brand": "    أطلس  AW-240",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-171": {
+      "code": "MCAB-171",
+      "name": "هراس تربه 2 حجر ",
+      "brand": "دبناك",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-172": {
+      "code": "MCAB-172",
+      "name": "مناول تلسكوبي",
+      "brand": "بوبكات T40180",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-173": {
+      "code": "MCAB-173",
+      "name": "مناول تلسكوبي",
+      "brand": "بوبكات T40180",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-174": {
+      "code": "MCAB-174",
+      "name": "لودر علي كاوتش ",
+      "brand": " كاتربيلر  20950",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-175": {
+      "code": "MCAB-175",
+      "name": "لودر علي كاوتش ",
+      "brand": "كاتربيلر  908H2",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-176": {
+      "code": "MCAB-176",
+      "name": "لودر علي كاوتش ",
+      "brand": "كاتربيلر  908H2",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-177": {
+      "code": "MCAB-177",
+      "name": "لودر علي كاوتش ",
+      "brand": "   فولفو   L120F",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-178": {
+      "code": "MCAB-178",
+      "name": "لودر علي كاوتش ",
+      "brand": "كاتربيلر  908H2",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-179": {
+      "code": "MCAB-179",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "مان",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-180": {
+      "code": "MCAB-180",
+      "name": "جرار زراعى",
+      "brand": "نصر",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-181": {
+      "code": "MCAB-181",
+      "name": "جرار زراعى",
+      "brand": "روماني",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-182": {
+      "code": "MCAB-182",
+      "name": "جرار زراعي ",
+      "brand": "بيلاروسى",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-183": {
+      "code": "MCAB-183",
+      "name": "هراس تربه 1 حجر ",
+      "brand": "    بوماج          BW-216-D40",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "MCAB-184": {
+      "code": "MCAB-184",
+      "name": "هراس تربه 2 حجر ",
+      "brand": "    بوماج          BW-100-AD5",
+      "branch": "HQ",
+      "type": "equipment",
+      "status": "available"
+    },
+    "BHTM-001": {
+      "code": "BHTM-001",
+      "name": "سيارة نقل محمل عليها تنك مياة",
+      "brand": "إسكانيا",
+      "branch": "BHT",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-001": {
+      "code": "NPPP-001",
+      "name": "محطة خلط خرسانة",
+      "brand": "اشتر الماني",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-002": {
+      "code": "NPPP-002",
+      "name": "مولد كهرباء",
+      "brand": "بركنز",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-003": {
+      "code": "NPPP-003",
+      "name": "مولد كهرباء 30 ك",
+      "brand": "بركنز",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-004": {
+      "code": "NPPP-004",
+      "name": "مولد كهرباء",
+      "brand": "فولفو",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-005": {
+      "code": "NPPP-005",
+      "name": "مولد كهرباء قدرة  320 ك - كاتربلير",
+      "brand": "NONE",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-006": {
+      "code": "NPPP-006",
+      "name": "مولد كهرباء قدرة  350 ك - بركنز",
+      "brand": "NONE",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-007": {
+      "code": "NPPP-007",
+      "name": "مولد كهرباء قدرة 65 ك ف - بركنز ",
+      "brand": "NONE",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-008": {
+      "code": "NPPP-008",
+      "name": "مولد كهرباء قدرة 10 ك ف - هوندا ",
+      "brand": "NONE",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-009": {
+      "code": "NPPP-009",
+      "name": "مضخة خرسانة شيفنج",
+      "brand": "مرسيدس",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "NPPP-010": {
+      "code": "NPPP-010",
+      "name": "جرار زراعى",
+      "brand": "بيلا روسى",
+      "branch": "SS",
+      "type": "equipment",
+      "status": "available"
+    },
+    "SPPP-001": {
+      "code": "SPPP-001",
+      "name": "ماكينه توليد كهرباء HZ50/AP 5000",
+      "brand": "Asian",
+      "branch": "NS",
+      "type": "equipment",
+      "status": "available"
+    }
+  },
+  "approvers": {
+    "top_management": {
+      "role": "top_management",
+      "name": "الإدارة العليا",
+      "telegramId": "5213443197"
+    },
+    "sector_head": {
+      "role": "sector_head",
+      "name": "رئيس القطاع",
+      "telegramId": "6127885624"
+    },
+    "branch_manager": {
+      "role": "branch_manager",
+      "name": "مدير الفرع",
+      "telegramId": "5811281915"
+    },
+    "warehouse_manager": {
+      "role": "warehouse_manager",
+      "name": "مدير المخازن",
+      "telegramId": "7255648515"
+    }
+  },
+  "transferRequests": {},
+  "approvalLogs": {}
+}
