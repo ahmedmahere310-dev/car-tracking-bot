@@ -8,7 +8,10 @@ const approvers = [
 ];
 
 async function main() {
-  console.log('بدأ تسجيل الموافقين...\n');
+  console.log('بدأ تحديث الموافقين...\n');
+  
+  // امسح القديم
+  await db.run('DELETE FROM approvers');
   
   for (const approver of approvers) {
     await db.run(
@@ -19,7 +22,7 @@ async function main() {
     console.log(`✅ ${approver.name} (${approver.telegram_id})`);
   }
   
-  console.log(`\n✅ اتسجل ${approvers.length} موافق`);
+  console.log(`\n✅ اتسجل ${approvers.length} موافق - كل واحد بتليجرام ID مختلف`);
 }
 
 main().catch(err => console.error('❌ خطأ:', err.message));
