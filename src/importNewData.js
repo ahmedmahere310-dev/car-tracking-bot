@@ -76,3 +76,36 @@ async function main() {
 }
 
 main().catch(err => console.error('❌ خطأ:', err.message));
+
+// استيراج المعدات الثقيلة من Sheet1
+async function importSheet1() {
+  const wb = require('xlsx').readFile(process.argv[2]);
+  const ws = wb.Sheets['Sheet1'];
+  const rows = require('xlsx').utils.sheet_to_json(ws, { header: 1 });
+  
+  console.log('\n📍 المعدات الثقيلة (Sheet1)');
+  
+  let count = 0;
+  for (const row of rows) {
+    if (!row || row.length < 13) continue;
+    
+    const code = row[12];
+    const name = row[3];
+    const brand = row[4];
+    
+    if (!code || !name) continue;
+    
+    await db.run(
+      `INSERT INTO assets (current_code, full_name, brand, current_branch, status)
+       VALUES (?, ?, ?, 'HQ', 'available')
+       ON CONFLICT(current_code) DO NOTHING`,
+      [code, name, brand]
+    );
+    
+    count++;
+  }
+  
+  console.log(`  ✓ ${count} معدة`);
+}
+
+importSheet1().catch(console.error);
