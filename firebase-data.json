@@ -5231,8 +5231,9 @@
     },
     "sector_head": {
       "role": "sector_head",
-      "name": "رئيس القطاع",
-      "telegramId": "6127885624"
+      "name": "رئيس قطاع المعدات",
+      "telegramId": "8145742068",
+      "isActive": true
     },
     "branch_manager": {
       "role": "branch_manager",
