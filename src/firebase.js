@@ -1,67 +1,80 @@
-const fs = require('fs');
-const path = require('path');
+const https = require('https');
 
-const DB_FILE = path.join(__dirname, '../firebase-data.json');
+// الرابط الصحيح بدون /~2F في الآخر
+const DB_URL = 'https://athletelifeos-default-rtdb.firebaseio.com';
 
-function readDB() {
-  if (!fs.existsSync(DB_FILE)) {
-    fs.writeFileSync(DB_FILE, JSON.stringify({
-      branches: {},
-      assets: {},
-      approvers: {},
-      transferRequests: {},
-      approvalLogs: {}
-    }, null, 2));
-  }
-  return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
-}
+function makeRequest(method, path, data = null) {
+  return new Promise((resolve, reject) => {
+    // تأكد من / في البداية
+    const fullPath = path.startsWith('/') ? path : '/' + path;
+    const url = `${DB_URL}${fullPath}.json`;
+    
+    console.log(`📡 ${method} ${url}`);
 
-function writeDB(data) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+    const options = {
+      method: method,
+      headers: { 'Content-Type': 'application/json' }
+    };
+
+    const req = https.request(url, options, (res) => {
+      let body = '';
+      res.on('data', chunk => body += chunk);
+      res.on('end', () => {
+        try {
+          resolve(body ? JSON.parse(body) : null);
+        } catch (e) {
+          resolve(body);
+        }
+      });
+    });
+
+    req.on('error', (err) => {
+      console.error(`❌ خطأ اتصال: ${err.message}`);
+      reject(err);
+    });
+
+    if (data) req.write(JSON.stringify(data));
+    req.end();
+  });
 }
 
 async function get(path) {
   try {
-    const db = readDB();
-    const keys = path.split('/').filter(k => k);
-    let result = db;
-    for (const key of keys) {
-      result = result[key];
-      if (!result) return null;
-    }
-    return result;
+    return await makeRequest('GET', path);
   } catch (err) {
-    console.error('❌ خطأ:', err.message);
+    console.error('❌ خطأ Firebase:', err.message);
     return null;
   }
 }
 
 async function all(path) {
   try {
-    const data = await get(path);
+    const data = await makeRequest('GET', path);
     return data ? Object.values(data) : [];
   } catch (err) {
-    console.error('❌ خطأ:', err.message);
+    console.error('❌ خطأ Firebase:', err.message);
     return [];
   }
 }
 
 async function set(path, value) {
   try {
-    const db = readDB();
-    const keys = path.split('/').filter(k => k);
-    let obj = db;
-    for (let i = 0; i < keys.length - 1; i++) {
-      obj[keys[i]] = obj[keys[i]] || {};
-      obj = obj[keys[i]];
-    }
-    obj[keys[keys.length - 1]] = value;
-    writeDB(db);
+    await makeRequest('PUT', path, value);
     return { success: true };
   } catch (err) {
-    console.error('❌ خطأ:', err.message);
+    console.error('❌ خطأ Firebase:', err.message);
     return { success: false };
   }
 }
 
-module.exports = { get, all, set };
+async function push(path, value) {
+  try {
+    const result = await makeRequest('POST', path, value);
+    return { id: result.name, success: true };
+  } catch (err) {
+    console.error('❌ خطأ Firebase:', err.message);
+    return { success: false };
+  }
+}
+
+module.exports = { get, all, set, push };
