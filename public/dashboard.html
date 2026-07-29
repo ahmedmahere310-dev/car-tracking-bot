@@ -9,131 +9,343 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <style>
   :root {
-    --bg: #0A0F1C;
-    --panel: #121A2E;
-    --line: #223050;
-    --amber: #F0B429;
-    --cyan: #38BDF8;
-    --text: #E7ECF6;
-    --muted: #7C8AA8;
-    --ok: #3DD9A5;
-    --danger: #F0574F;
+    --bg: #0F1419;
+    --panel: #1A1F2E;
+    --line: #2D3748;
+    --primary: #00D9FF;
+    --success: #00FF88;
+    --warning: #FFB800;
+    --danger: #FF4757;
+    --text: #E8F0F8;
+    --muted: #8B95A5;
   }
+
   * { box-sizing: border-box; }
+  
   body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: 'Tajawal', sans-serif; min-height: 100vh;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Tajawal', sans-serif;
+    min-height: 100vh;
   }
-  
+
   header {
-    padding: 20px 28px; border-bottom: 1px solid var(--line);
-    background: linear-gradient(180deg, rgba(18,26,46,0.8), transparent);
+    background: linear-gradient(135deg, rgba(0,217,255,0.1), rgba(0,255,136,0.05));
+    border-bottom: 1px solid var(--line);
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
-  header h1 { font-family: 'Cairo', sans-serif; font-weight: 900; font-size: 24px; margin: 0; }
-  
+
+  header h1 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0;
+    background: linear-gradient(135deg, var(--primary), var(--success));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--success);
+  }
+
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
   nav {
-    display: flex; gap: 10px; padding: 10px 28px; flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+    flex-wrap: wrap;
   }
+
   nav button {
-    padding: 8px 14px; background: var(--panel); border: 1px solid var(--line);
-    color: var(--text); border-radius: 6px; cursor: pointer; font-family: 'Tajawal';
-    transition: 0.2s;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--line);
+    color: var(--text);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Tajawal';
+    font-weight: 500;
+    transition: all 0.3s;
+    white-space: nowrap;
   }
-  nav button.active { background: var(--cyan); color: var(--bg); }
-  nav button:hover { border-color: var(--cyan); }
 
-  main { padding: 20px 28px; max-width: 1400px; margin: 0 auto; }
-
-  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
-  .kpi {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
-    padding: 16px; text-align: center;
+  nav button:hover {
+    border-color: var(--primary);
+    background: rgba(0,217,255,0.1);
   }
-  .kpi .label { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
-  .kpi .value { font-size: 28px; font-weight: 700; }
-  .kpi.amber .value { color: var(--amber); }
-  .kpi.cyan .value { color: var(--cyan); }
-  .kpi.ok .value { color: var(--ok); }
-  .kpi.danger .value { color: var(--danger); }
 
-  .section { margin-bottom: 20px; }
-  .section h2 { font-family: 'Cairo', sans-serif; font-size: 16px; margin: 0 0 12px; }
+  nav button.active {
+    background: var(--primary);
+    color: var(--bg);
+    border-color: var(--primary);
+  }
 
-  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+  main {
+    padding: 28px 32px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .kpi-card {
+    background: linear-gradient(135deg, var(--panel), rgba(26,31,46,0.5));
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .kpi-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,217,255,0.1);
+  }
+
+  .kpi-label {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .kpi-value {
+    font-size: 36px;
+    font-weight: 900;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .kpi-primary .kpi-value { color: var(--primary); }
+  .kpi-success .kpi-value { color: var(--success); }
+  .kpi-warning .kpi-value { color: var(--warning); }
+  .kpi-danger .kpi-value { color: var(--danger); }
+
+  .section {
+    margin-bottom: 28px;
+  }
+
+  .section h2 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    color: var(--primary);
+  }
+
+  .panel {
+    background: linear-gradient(135deg, var(--panel), rgba(26,31,46,0.5));
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+  }
 
   table {
-    width: 100%; border-collapse: collapse; font-size: 13px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
   }
-  th { text-align: right; color: var(--muted); font-weight: 500; padding: 10px; border-bottom: 1px solid var(--line); }
-  td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.04); }
 
-  .empty { color: var(--muted); text-align: center; padding: 30px; }
-  .chart-wrap { height: 250px; margin-bottom: 20px; }
-
-  .branch-card {
-    background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 8px;
-    padding: 14px; margin-bottom: 12px;
+  th {
+    text-align: right;
+    color: var(--muted);
+    font-weight: 600;
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
-  .branch-card strong { color: var(--cyan); }
-  .branch-card .count { color: var(--amber); font-weight: 700; }
 
-  .asset-item {
-    padding: 10px; border-bottom: 1px solid var(--line);
-    display: grid; grid-template-columns: 100px 1fr 80px; gap: 10px;
-    align-items: center;
+  td {
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
-  .asset-code { color: var(--amber); font-weight: 700; font-family: monospace; }
-  .asset-type { color: var(--muted); font-size: 12px; }
+
+  tr:hover { background: rgba(0,217,255,0.05); }
+
+  .code-badge {
+    font-family: 'Courier New', monospace;
+    background: rgba(0,217,255,0.15);
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .status-badge {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .status-available { background: rgba(0,255,136,0.2); color: var(--success); }
+  .status-pending { background: rgba(255,184,0,0.2); color: var(--warning); }
+  .status-approved { background: rgba(0,217,255,0.2); color: var(--primary); }
+
+  .empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 48px;
+    font-size: 14px;
+  }
+
+  .chart-container {
+    position: relative;
+    height: 280px;
+    margin-bottom: 24px;
+  }
+
+  .loading {
+    text-align: center;
+    color: var(--muted);
+    padding: 32px;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--line);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 16px;
+  }
+
+  .transfer-item {
+    padding: 16px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--primary);
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  .transfer-asset {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .transfer-route {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .transfer-time {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🚦 لوحة التحكم - نظام تتبع الأسطول</h1>
+  <div>
+    <h1>🚦 لوحة التحكم الموحدة</h1>
+  </div>
+  <div class="live-indicator">
+    <div class="live-dot"></div>
+    <span>بيانات حية</span>
+  </div>
 </header>
 
 <nav>
   <button class="tab-btn active" data-tab="overview">📊 نظرة عامة</button>
   <button class="tab-btn" data-tab="branches">🏢 الفروع</button>
   <button class="tab-btn" data-tab="assets">🚗 الأصول</button>
+  <button class="tab-btn" data-tab="transfers">🔄 آخر النقلات</button>
   <button class="tab-btn" data-tab="stats">📈 الإحصائيات</button>
-  <button class="tab-btn" data-tab="requests">📋 الطلبات</button>
 </nav>
 
 <main>
 
   <!-- نظرة عامة -->
   <div id="overview" class="tab-content">
-    <div class="kpi-row">
-      <div class="kpi amber">
-        <div class="label">إجمالي الأصول</div>
-        <div class="value" id="kpiTotal">0</div>
+    <div class="kpi-grid">
+      <div class="kpi-card kpi-primary">
+        <div class="kpi-label">إجمالي الأصول</div>
+        <div class="kpi-value" id="kpiTotal">0</div>
       </div>
-      <div class="kpi cyan">
-        <div class="label">النقلات المكتملة</div>
-        <div class="value" id="kpiCompleted">0</div>
+      <div class="kpi-card kpi-success">
+        <div class="kpi-label">الفروع</div>
+        <div class="kpi-value" id="kpiBranches">0</div>
       </div>
-      <div class="kpi ok">
-        <div class="label">الموافق عليها</div>
-        <div class="value" id="kpiApproved">0</div>
+      <div class="kpi-card kpi-warning">
+        <div class="kpi-label">النقلات الكاملة</div>
+        <div class="kpi-value" id="kpiTransfers">0</div>
       </div>
-      <div class="kpi danger">
-        <div class="label">المعلّقة</div>
-        <div class="value" id="kpiPending">0</div>
+      <div class="kpi-card kpi-danger">
+        <div class="kpi-label">المعلّقة</div>
+        <div class="kpi-value" id="kpiPending">0</div>
       </div>
     </div>
 
     <div class="section">
       <h2>توزيع الأصول على الفروع</h2>
-      <div class="panel" id="overviewPanel"></div>
+      <div class="panel">
+        <table>
+          <thead><tr><th>الفرع</th><th>عدد الأصول</th><th>النقلات الصادرة</th><th>النقلات الواردة</th></tr></thead>
+          <tbody id="branchOverviewBody">
+            <tr><td colspan="4" class="empty"><div class="spinner"></div></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
   <!-- الفروع -->
   <div id="branches" class="tab-content" style="display:none;">
     <div class="section">
-      <h2>الفروع والمعدات</h2>
-      <div class="panel" id="branchesPanel"></div>
+      <h2>الفروع التفصيلية</h2>
+      <div class="panel" id="branchesPanel">
+        <div class="loading"><div class="spinner"></div></div>
+      </div>
     </div>
   </div>
 
@@ -142,47 +354,46 @@
     <div class="section">
       <h2>قائمة الأصول الكاملة</h2>
       <div class="panel">
-        <table id="assetsTable">
-          <thead><tr><th>الكود</th><th>الاسم</th><th>الماركة</th><th>الفرع</th><th>النوع</th><th>النقلات</th></tr></thead>
-          <tbody id="assetsBody"></tbody>
+        <table>
+          <thead><tr><th>الكود</th><th>الاسم</th><th>الماركة</th><th>الفرع</th><th>النوع</th><th>الحالة</th><th>النقلات</th></tr></thead>
+          <tbody id="assetsBody">
+            <tr><td colspan="7" class="empty"><div class="spinner"></div></td></tr>
+          </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- آخر النقلات -->
+  <div id="transfers" class="tab-content" style="display:none;">
+    <div class="section">
+      <h2>آخر عمليات النقل</h2>
+      <div class="panel" id="transfersPanel">
+        <div class="loading"><div class="spinner"></div></div>
       </div>
     </div>
   </div>
 
   <!-- الإحصائيات -->
   <div id="stats" class="tab-content" style="display:none;">
-    <div class="kpi-row">
-      <div class="kpi cyan">
-        <div class="label">إجمالي النقلات</div>
-        <div class="value" id="statTotal">0</div>
+    <div class="kpi-grid">
+      <div class="kpi-card kpi-primary">
+        <div class="kpi-label">إجمالي النقلات</div>
+        <div class="kpi-value" id="statTotal">0</div>
       </div>
-      <div class="kpi ok">
-        <div class="label">الموافق عليها</div>
-        <div class="value" id="statApproved">0</div>
+      <div class="kpi-card kpi-success">
+        <div class="kpi-label">الموافق عليها</div>
+        <div class="kpi-value" id="statApproved">0</div>
       </div>
-      <div class="kpi danger">
-        <div class="label">المرفوضة</div>
-        <div class="value" id="statRejected">0</div>
+      <div class="kpi-card kpi-danger">
+        <div class="kpi-label">المرفوضة</div>
+        <div class="kpi-value" id="statRejected">0</div>
       </div>
     </div>
 
     <div class="section">
-      <h2>أكثر الفروع نقلات</h2>
+      <h2>أكثر الفروع نشاطًا</h2>
       <div class="panel" id="topBranchesPanel"></div>
-    </div>
-
-    <div class="section">
-      <h2>أكثر المسارات نشاطًا</h2>
-      <div class="panel" id="topRoutesPanel"></div>
-    </div>
-  </div>
-
-  <!-- الطلبات -->
-  <div id="requests" class="tab-content" style="display:none;">
-    <div class="section">
-      <h2>الطلبات المعلّقة</h2>
-      <div class="panel" id="requestsPanel"></div>
     </div>
   </div>
 
@@ -191,42 +402,47 @@
 <script>
 let allData = {};
 
-async function loadAllData() {
+async function loadData() {
   try {
     const res = await fetch('/api/dashboard-data');
     allData = await res.json();
-    console.log('✅ البيانات اتحملت');
+    console.log('✅ البيانات اتحملت', allData);
+    
     loadOverview();
+    document.querySelectorAll('.tab-content').forEach(el => {
+      if (el.id === 'overview') el.style.display = 'block';
+      else el.style.display = 'none';
+    });
   } catch (err) {
     console.error('❌ خطأ:', err);
   }
 }
 
 function loadOverview() {
+  const branches = Object.keys(allData.branches || {}).length;
   const assets = Object.values(allData.assets || {});
-  const requests = Object.values(allData.requests || {});
-  const branches = allData.branches || {};
+  const requests = Object.values(allData.transferRequests || {});
 
   document.getElementById('kpiTotal').textContent = assets.length;
-  document.getElementById('kpiCompleted').textContent = requests.filter(r => r.status === 'approved').length;
-  document.getElementById('kpiApproved').textContent = requests.filter(r => r.status === 'approved').length;
+  document.getElementById('kpiBranches').textContent = branches;
+  document.getElementById('kpiTransfers').textContent = requests.filter(r => r.status === 'approved').length;
   document.getElementById('kpiPending').textContent = requests.filter(r => r.status === 'pending').length;
 
-  const branchStats = {};
-  assets.forEach(a => {
-    branchStats[a.branch] = (branchStats[a.branch] || 0) + 1;
-  });
-
-  const html = Object.entries(branchStats)
-    .sort((a, b) => b[1] - a[1])
-    .map(([code, count]) => `
-      <div class="branch-card">
-        <strong>${branches[code]?.name || code}</strong>
-        <div class="count">${count} أصل</div>
-      </div>
-    `).join('');
-
-  document.getElementById('overviewPanel').innerHTML = html || '<div class="empty">لا توجد بيانات</div>';
+  const branchOverviewBody = document.getElementById('branchOverviewBody');
+  const branchesData = allData.branches || {};
+  
+  branchOverviewBody.innerHTML = Object.entries(branchesData)
+    .map(([code, branch]) => {
+      const branchAssets = assets.filter(a => a.branch === code).length;
+      return `
+        <tr>
+          <td><strong>${branch.name}</strong></td>
+          <td>${branchAssets}</td>
+          <td>${branch.totalOutgoing || 0}</td>
+          <td>${branch.totalIncoming || 0}</td>
+        </tr>
+      `;
+    }).join('') || '<tr><td colspan="4" class="empty">لا توجد بيانات</td></tr>';
 }
 
 function loadBranches() {
@@ -237,13 +453,10 @@ function loadBranches() {
     .map(([code, branch]) => {
       const branchAssets = assets.filter(a => a.branch === code);
       return `
-        <div class="branch-card">
+        <div style="margin-bottom: 20px; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid var(--primary);">
           <strong>${branch.name} (${code})</strong>
           <div style="font-size: 12px; color: var(--muted); margin-top: 8px;">
-            ${branchAssets.length} أصل | النقلات الخارجة: ${branch.totalOutgoing || 0} | الوارة: ${branch.totalIncoming || 0}
-          </div>
-          <div style="margin-top: 10px;">
-            ${branchAssets.slice(0, 5).map(a => `<div class="asset-item"><span class="asset-code">${a.code}</span><span>${a.name}</span><span class="asset-type">${a.type}</span></div>`).join('')}
+            ${branchAssets.length} أصل | صادرة: ${branch.totalOutgoing || 0} | واردة: ${branch.totalIncoming || 0}
           </div>
         </div>
       `;
@@ -254,75 +467,67 @@ function loadBranches() {
 
 function loadAssets() {
   const assets = Object.values(allData.assets || {});
-  
   const tbody = document.getElementById('assetsBody');
-  tbody.innerHTML = assets
-    .slice(0, 200)
-    .map(a => `
-      <tr>
-        <td><strong>${a.code}</strong></td>
-        <td>${a.name}</td>
-        <td>${a.brand || '-'}</td>
-        <td>${a.branch}</td>
-        <td>${a.type === 'vehicle' ? '🚗 سيارة' : '⚙️ معدة'}</td>
-        <td>${a.transferCount || 0}</td>
-      </tr>
-    `).join('') || '<tr><td colspan="6" class="empty">لا توجد أصول</td></tr>';
+
+  tbody.innerHTML = assets.slice(0, 500).map(a => `
+    <tr>
+      <td><span class="code-badge">${a.code}</span></td>
+      <td>${a.name}</td>
+      <td>${a.brand || '-'}</td>
+      <td>${a.branch}</td>
+      <td>${a.type === 'vehicle' ? '🚗 سيارة' : '⚙️ معدة'}</td>
+      <td><span class="status-badge status-available">متاحة</span></td>
+      <td>${a.transferCount || 0}</td>
+    </tr>
+  `).join('') || '<tr><td colspan="7" class="empty">لا توجد أصول</td></tr>';
 }
 
-async function loadStats() {
-  try {
-    const res = await fetch('/api/stats');
-    const stats = await res.json();
-
-    document.getElementById('statTotal').textContent = stats.totalTransfers;
-    document.getElementById('statApproved').textContent = stats.totalApproved;
-    document.getElementById('statRejected').textContent = stats.totalRejected;
-
-    const topBranchesHtml = stats.topBranches
-      .map(b => `
-        <div class="branch-card">
-          <strong>${b.name || b.branch}</strong>
-          <div class="count">${b.transferCount} نقلة</div>
-        </div>
-      `).join('');
-    document.getElementById('topBranchesPanel').innerHTML = topBranchesHtml || '<div class="empty">لا توجد بيانات</div>';
-
-    const topRoutesHtml = stats.topRoutes
-      .map(r => `
-        <div class="branch-card">
-          <strong>${r.fromName || r.from} → ${r.toName || r.to}</strong>
-          <div class="count">${r.count} نقلة</div>
-        </div>
-      `).join('');
-    document.getElementById('topRoutesPanel').innerHTML = topRoutesHtml || '<div class="empty">لا توجد بيانات</div>';
-  } catch (err) {
-    console.error('❌ خطأ:', err);
-  }
-}
-
-function loadRequests() {
-  const requests = Object.values(allData.requests || {});
+function loadTransfers() {
+  const requests = Object.values(allData.transferRequests || {});
   const assets = allData.assets || {};
 
-  const pending = requests.filter(r => r.status === 'pending');
-  const html = pending
+  const html = requests
+    .filter(r => r.status === 'approved')
+    .reverse()
+    .slice(0, 20)
     .map(r => `
-      <div class="branch-card">
-        <strong>الطلب: ${r.id}</strong>
-        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">
-          المعدة: <strong>${assets[r.asset_id]?.name || r.asset_id}</strong><br>
-          من <strong>${r.from}</strong> إلى <strong>${r.to}</strong><br>
-          السبب: ${r.reason}<br>
-          المرحلة: ${r.current_stage}/4
-        </div>
+      <div class="transfer-item">
+        <div class="transfer-asset">📦 ${assets[r.asset_id]?.name || r.asset_id}</div>
+        <div class="transfer-route">من <strong>${r.from}</strong> ← → إلى <strong>${r.to}</strong></div>
+        <div class="transfer-time">السبب: ${r.reason}</div>
       </div>
     `).join('');
 
-  document.getElementById('requestsPanel').innerHTML = html || '<div class="empty">لا توجد طلبات معلّقة</div>';
+  document.getElementById('transfersPanel').innerHTML = html || '<div class="empty">لا توجد نقلات</div>';
 }
 
-// Tab switching
+async function loadStats() {
+  const requests = Object.values(allData.transferRequests || {});
+
+  document.getElementById('statTotal').textContent = requests.length;
+  document.getElementById('statApproved').textContent = requests.filter(r => r.status === 'approved').length;
+  document.getElementById('statRejected').textContent = requests.filter(r => r.status === 'rejected').length;
+
+  const branches = allData.branches || {};
+  const branchTransfers = {};
+  
+  requests.forEach(r => {
+    branchTransfers[r.from] = (branchTransfers[r.from] || 0) + 1;
+  });
+
+  const topBranches = Object.entries(branchTransfers)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([code, count]) => `
+      <div style="padding: 12px; margin-bottom: 8px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+        <strong>${branches[code]?.name || code}</strong> - <span style="color: var(--primary);">${count} نقلة</span>
+      </div>
+    `).join('');
+
+  document.getElementById('topBranchesPanel').innerHTML = topBranches || '<div class="empty">لا توجد بيانات</div>';
+}
+
+// Tab Switching
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -332,14 +537,14 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 
     if (this.dataset.tab === 'branches') loadBranches();
     if (this.dataset.tab === 'assets') loadAssets();
+    if (this.dataset.tab === 'transfers') loadTransfers();
     if (this.dataset.tab === 'stats') loadStats();
-    if (this.dataset.tab === 'requests') loadRequests();
   });
 });
 
-// Load on start
-loadAllData();
-setInterval(loadAllData, 15000);
+// Load Data
+loadData();
+setInterval(loadData, 10000); // تحديث كل 10 ثواني
 </script>
 
 </body>
